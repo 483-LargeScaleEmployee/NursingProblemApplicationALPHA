@@ -3,16 +3,16 @@
 ### Getters
 #### Fetch USERID
 	get_Department_List(DEPARTMENT)			:= {USERID, ...}
-	get_Department_Role(DEPARTMENT, ROLE)	:= {USERID, ...}
+	get_Department_Role(DEPARTMENT, ROLE)		:= {USERID, ...}
 	
 #### Fetch Employee Info
-	get_Employee(USERID) 					:= {DEPARTMENT, ROLE, AVAILABILITY, PREFERRED}
-	get_Employee(USERID, ...)				:= {{DEPARTMENT, ROLE, AVAILABILITY, PREFERRED}, ...}
+	get_Employee(USERID) 				:= {DEPARTMENT, ROLE, AVAILABILITY, PREFERRED}
+	get_Employee(USERID, ...)			:= {{DEPARTMENT, ROLE, AVAILABILITY, PREFERRED}, ...}
 	get_Employee_Schedule(USERID)			:= {AVAILABILITY, PREFERRED}
 	get_Employee_Schedule(USERID, ...)		:= {{AVAILABILITY, PREFERRED}, ...}
 	
 	get_Employee_Availability(USERID)		:= {AVAILABILITY, PREFERRED}
-	get_Employee_Availability(USERID, ...)	:= {AVAILABILITY, ...}
+	get_Employee_Availability(USERID, ...)		:= {AVAILABILITY, ...}
 	
 	get_Employee_Preferred(USERID)			:= {PREFERRED}
 	get_Employee_Preferred(USERID, ...)		:= {PREFERRED, ...}
@@ -108,8 +108,8 @@ Binary| Hex|Decimal| Meaning|
 ## Shift Needs
 ### Getters
 #### Fetch USERID
-	get_Needs_Department(DEPARTMENT)					:= int
-	get_Needs_Department_List(DEPARTMENT)				:= {int, ...}
+	get_Needs_Department(DEPARTMENT)			:= int
+	get_Needs_Department_List(DEPARTMENT)			:= {int, ...}
 	
 	get_Needs_DepartmentByRole(DEPARTMENT, ROLE)		:= int
 	get_Needs_DepartmentByRole_List(DEPARTMENT, ROLE)	:= {int, ...}
@@ -124,7 +124,7 @@ REQUIRED|N/A|14 bytes
 	RAW: 0011000101110111011101110111011101110111011101110111011101110111
 	HEX: 3177777777777777
 	SEPARATED BY TYPE: 	0011 0001 
-						01110111011101110111011101110111011101110111011101110111
+				01110111011101110111011101110111011101110111011101110111
 	SEPARATED BY TYPE (HEX): 3 1 77777777777777
 EXPLAINED:
 |Type|  Binary| Hex|Decimal| Meaning|
