@@ -10,17 +10,17 @@
 	SEPARATED BY TYPE:
 	0011 0010 0001010101110010 001001001001001001001001001001001001001001
 	EXPLAINED:
-	0011 				:= 3 		:= 3rd Department
-	0010 				:= 2 		:= 2nd Role
+	0011 			:= 3 		:= 3rd Department
+	0010 			:= 2 		:= 2nd Role
 	0001010101110010	:= 5490		:= Employee #5490
-	001001...			:= Shift 3	:= Works Shift 3 every day
+	001001...		:= Shift 3	:= Works Shift 3 every day
 
 # Getters
-	get_Employee(USERID) 						:= {DEPARTMENT, ROLE, SCHEDULE}
-	get_Employee(USERID, USERID, ...)			:= {{DEPARTMENT, ROLE, SCHEDULE},...}
-	get_Employee_Schedule(USERID)				:= {SCHEDULE}
+	get_Employee(USERID) 				:= {DEPARTMENT, ROLE, SCHEDULE}
+	get_Employee(USERID, USERID, ...)		:= {{DEPARTMENT, ROLE, SCHEDULE},...}
+	get_Employee_Schedule(USERID)			:= {SCHEDULE}
 	get_Employee_Schedule(USERID, USERID, ...)	:= {SCHEDULE, SCHEDULE, ...}
-	get_Department_List(DEPARTMENT)				:= {USERID, USERID, ...}
+	get_Department_List(DEPARTMENT)			:= {USERID, USERID, ...}
 	get_Department_Role(DEPARTMENT, ROLE)		:= {USERID, USERID, ...}
 
 # Notes
