@@ -2,8 +2,8 @@
 ## Employee Information
 ### Getters
 #### Fetch USERID
-	get_Department_List(DEPARTMENT)			:= {USERID, ...}
-	get_Department_Role(DEPARTMENT, ROLE)		:= {USERID, ...}
+	get_Department(DEPARTMENT)			:= {USERID, ...}
+	get_DepartmentByRole(DEPARTMENT, ROLE)		:= {USERID, ...}
 	
 #### Fetch Employee Info
 	get_Employee(USERID) 				:= {DEPARTMENT, ROLE, AVAILABILITY, PREFERRED}
@@ -14,7 +14,7 @@
 	get_Employee_Availability(USERID)		:= {AVAILABILITY, PREFERRED}
 	get_Employee_Availability(USERID, ...)		:= {AVAILABILITY, ...}
 	
-	get_Employee_Preferred(USERID)			:= {PREFERRED}
+	get_Employee_Preferred(USERID)			:= PREFERRED
 	get_Employee_Preferred(USERID, ...)		:= {PREFERRED, ...}
 ### Data Info
 
@@ -101,18 +101,19 @@ Binary| Hex|Decimal| Meaning|
 	* X000	: No shifts
 	* 0XXX	: Regular Day
 	* 1XXX	: PTO Request
-5. 1.06MB MAX per week (27.6MB MAX per year).
-6. Hex representations listed for redundancy and for debugging purposes. Remember, its the exact same binary data, just an easier way to look at it for some.
+5. 16.6KB per thousand employees per week (432KB per year)
+6. 1.06MB MAX per week (27.6MB MAX per year).
+7. Hex representations listed for redundancy and for debugging purposes. Remember, its the exact same binary data, just an easier way to look at it for some.
 
 
 ## Shift Needs
 ### Getters
 #### Fetch USERID
-	get_Needs_Department(DEPARTMENT)			:= int
-	get_Needs_Department_List(DEPARTMENT)			:= {int, ...}
+	get_Needs_Department_List(DEPARTMENT)			:= REQUIRED
+	get_Needs_Department_Total(DEPARTMENT)			:= int
 	
-	get_Needs_DepartmentByRole(DEPARTMENT, ROLE)		:= int
-	get_Needs_DepartmentByRole_List(DEPARTMENT, ROLE)	:= {int, ...}
+	get_Needs_DepartmentByRole_List(DEPARTMENT, ROLE)	:= REQUIRED
+	get_Needs_DepartmentByRole_Total(DEPARTMENT, ROLE)	:= int
 
 ### Data Info
 |Type|  # of Options| Space Taken|
