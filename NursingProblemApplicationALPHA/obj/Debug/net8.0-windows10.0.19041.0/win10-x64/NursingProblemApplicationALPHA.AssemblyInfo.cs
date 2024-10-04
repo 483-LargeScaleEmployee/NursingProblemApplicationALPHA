@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NursingProblemApplicationALPHA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+521c5bdc791a0f6ccbba7ba67e412c804a7dce5d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9736ff7cf78a7ef865dffc7f48321c59e9f068d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("NursingProblemApplicationALPHA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NursingProblemApplicationALPHA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
