@@ -45,3 +45,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA-main/NursingProblemApplicationALPHA/UpperManagementPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.UpperManagementPage.xaml
+build_metadata.AdditionalFiles.TargetPath = UpperManagementPage.xaml
+build_metadata.AdditionalFiles.RelativePath = UpperManagementPage.xaml

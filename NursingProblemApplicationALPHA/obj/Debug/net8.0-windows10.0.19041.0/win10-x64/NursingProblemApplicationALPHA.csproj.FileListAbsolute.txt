@@ -464,3 +464,5 @@ C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA-main\NursingProbl
 C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA-main\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\next.scale-100.png
 C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA-main\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\next.scale-100.png
 C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA-main\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.sourcelink.json
+C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA-main\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\back.scale-100.png
+C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA-main\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\back.scale-100.png

@@ -15,8 +15,8 @@
 
         <ShellContent
             Title="Upper"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:UpperManagementPage}"
+            Route="UpperManagementPage" />
 
         <ShellContent
             Title="Senior"
