@@ -72,6 +72,8 @@ namespace NursingProblemApplicationALPHA.WinUI
 #if DEBUG && !DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION
             UnhandledException += (sender, e) =>
             {
+                //Sometimes the program crashes when switching between Employee, Upper, and Senior
+                //I have no idea why this happens and it's only happened twice
                 if (global::System.Diagnostics.Debugger.IsAttached) global::System.Diagnostics.Debugger.Break();
             };
 #endif
