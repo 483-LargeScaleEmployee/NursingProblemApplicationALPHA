@@ -88,5 +88,32 @@ public partial class MainPage : ContentPage
 		}
     }
 
+
+	
+    private async void ImportFile_Clicked(object sender, EventArgs e) //Button that lets you import files
+    {
+		var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+		{
+			{DevicePlatform.WinUI, new[] {".csv"}} //This should only let you import csv files
+		
+		});
+
+
+
+		var result = await FilePicker.PickAsync(new PickOptions
+		{
+			PickerTitle = "Import CSV",
+			FileTypes = customFileType
+		});
+
+		if (result == null){
+			return;
+		}
+
+		var stream = await result.OpenReadAsync();  //I dont know what this line does for sure, I think it reads the file
+
+    }
+
+
 }
 

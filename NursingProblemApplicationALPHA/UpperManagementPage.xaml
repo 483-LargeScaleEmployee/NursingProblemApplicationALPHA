@@ -152,16 +152,27 @@
             </ScrollView>   
 
             <!--This button isnt where I want it to be, but it can be moved later--> 
-            <Button
-                Text ="Toggle Week View"
-                BackgroundColor ="Cyan"
-                BorderWidth ="2"
-                BorderColor ="Black"
-                TextColor ="Black"
-                Clicked="WeekView_Clicked"
-                ToolTipProperties.Text="Clickable"
-                />
-                
+            <HorizontalStackLayout>   
+                <Button
+                    Text ="Toggle Week View"
+                    BackgroundColor ="Cyan"
+                    BorderWidth ="2"
+                    BorderColor ="Black"
+                    TextColor ="Black"
+                    Clicked="WeekView_Clicked"
+                    ToolTipProperties.Text="Clickable"
+                    />
+
+                <Button
+                    Text ="Import File"
+                    BackgroundColor ="Green"
+                    BorderWidth ="2"
+                    BorderColor ="Black"
+                    TextColor ="Black"
+                    Clicked="ImportFile_Clicked"
+                    ToolTipProperties.Text="Clickable"/>
+
+            </HorizontalStackLayout> 
         </VerticalStackLayout>
     </ScrollView>
 
