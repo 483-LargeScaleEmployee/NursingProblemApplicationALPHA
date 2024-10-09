@@ -22,3 +22,5 @@ NursingProblemApplicationALPHA/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/Nu
 NursingProblemApplicationALPHA/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/NursingProblemApplicationALPHA.AssemblyInfoInputs.cache
 NursingProblemApplicationALPHA/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/NursingProblemApplicationALPHA.assets.cache
 NursingProblemApplicationALPHA/obj/Debug/net8.0-windows10.0.19041.0/win10-x64/NursingProblemApplicationALPHA.GeneratedMSBuildEditorConfig.editorconfig
+/NursingProblemApplicationALPHA/bin/Debug/net8.0-windows10.0.19041.0/win10-x64
+/.vs
