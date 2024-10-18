@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eric\\Documents\\Code\\VSCode\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj": {}
+    "C:\\Users\\Eric\\Downloads\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eric\\Documents\\Code\\VSCode\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj": {
+    "C:\\Users\\Eric\\Downloads\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eric\\Documents\\Code\\VSCode\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj",
+        "projectUniqueName": "C:\\Users\\Eric\\Downloads\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj",
         "projectName": "NursingProblemApplicationALPHA",
-        "projectPath": "C:\\Users\\Eric\\Documents\\Code\\VSCode\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj",
+        "projectPath": "C:\\Users\\Eric\\Downloads\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj",
         "packagesPath": "C:\\Users\\Eric\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eric\\Documents\\Code\\VSCode\\NursingProblemApplicationALPHA\\obj\\",
+        "outputPath": "C:\\Users\\Eric\\Downloads\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
