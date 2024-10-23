@@ -177,3 +177,6 @@ C:\Users\Eric\Source\Repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA
 C:\Users\Eric\Source\Repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\Eric\Source\Repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Eric\Source\Repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\Eric\Source\Repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.dll
+C:\Users\Eric\Source\Repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Core.dll
+C:\Users\Eric\Source\Repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\System.Speech.dll

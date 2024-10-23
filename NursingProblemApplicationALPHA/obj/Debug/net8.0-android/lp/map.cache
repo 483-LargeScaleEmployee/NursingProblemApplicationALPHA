@@ -158,3 +158,6 @@ Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 Xamarin.Google.Crypto.Tink.Android.aar
 Xamarin.Google.ErrorProne.Annotations.aar
+Microsoft.AspNetCore.Components.WebView.Maui.dll
+CommunityToolkit.Maui.Core.dll
+CommunityToolkit.Maui.dll
