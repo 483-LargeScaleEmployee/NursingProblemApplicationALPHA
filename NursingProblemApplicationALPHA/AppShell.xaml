@@ -12,8 +12,8 @@
   <TabBar>
     <ShellContent
         Title="Employee"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:SeniorPage}"
+        Route="SeniorPage" />
 
     <ShellContent
         Title="Upper"
