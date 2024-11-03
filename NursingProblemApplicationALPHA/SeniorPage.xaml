@@ -24,6 +24,22 @@
             Text="Toggle Render Mode"
             Command="{Binding ToggleRenderModeCommand}"
             HorizontalOptions="Center" />
+
+        <Button
+            x:Name="buttonRotateRight"
+            Grid.Row="1"
+            Text="Rotate Cube Right"
+            HorizontalOptions="End"
+            Pressed="buttonRotateRight_Pressed"
+            Released="buttonRotateRight_Released" />
+
+        <Button
+            x:Name="buttonRotateLeft"
+            Grid.Row="1"
+            Text="Rotate Cube Left"
+            HorizontalOptions="Start"
+            Pressed="buttonRotateLeft_Pressed" 
+            Released="buttonRotateLeft_Released" />
     </Grid>
     
 </ContentPage>

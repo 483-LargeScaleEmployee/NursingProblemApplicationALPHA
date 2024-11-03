@@ -14,6 +14,8 @@ public class MainViewModel : INotifyPropertyChanged
     public bool Wireframe { get; set; } = false;
     public RenderMode Mode => Wireframe ? RenderMode.Wireframe : RenderMode.Solid;
 
+    public event PropertyChangedEventHandler PropertyChanged;
+
     IList<Vector3> _cubePoints = new List<Vector3>()
     {
         new Vector3() { X = -100, Y = -100, Z = -100 },
@@ -53,8 +55,8 @@ public class MainViewModel : INotifyPropertyChanged
 
     public Matrix4x4 Delta { get; set; } =
         Matrix4x4.Multiply(
-            Matrix4x4.CreateRotationX((float)(0.3 * (Math.PI / 180))),
-            Matrix4x4.CreateRotationY((float)(0.5 * (Math.PI / 180)))
+            Matrix4x4.CreateRotationX((float)(0.0 * (Math.PI / 180))),
+            Matrix4x4.CreateRotationY((float)(0.0 * (Math.PI / 180)))
         );
 
     public MainViewModel()
@@ -81,6 +83,14 @@ public class MainViewModel : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Mode)));
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    public void setDelta(Matrix4x4 newDelta)
+    {
+        Delta = newDelta;
+    }
+
+    public Matrix4x4 getDelta()
+    {
+        return Delta;
+    }
 
 }
