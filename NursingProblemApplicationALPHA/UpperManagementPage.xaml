@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NursingProblemApplicationALPHA.UpperManagementPage"
              Title="UpperManagementPage">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
-            <Label
-                Text="Department: VARIABLE"/>
+            <HorizontalStackLayout Spacing="5">
+                <Label
+                    Text="Department: "/>
+
+                <Label
+                    Text="{Binding department}"/>
+                
+            </HorizontalStackLayout>
 
             <!--add way to see 2 weeks at once through options menu, horizontal scroll-->
             <!--Horizontal Layout (Time Labels, Absolute layout, Next Arrow)-->
@@ -171,6 +178,16 @@
                     TextColor ="Black"
                     Clicked="ImportFile_Clicked"
                     ToolTipProperties.Text="Clickable"/>
+
+                <Button
+                    Text ="Change Department"
+                    BackgroundColor ="LightCoral"
+                    BorderWidth ="2"
+                    BorderColor ="Black"
+                    TextColor ="Black"
+                    Clicked="Change_Department"
+                    ToolTipProperties.Text="Clickable"/>
+
 
             </HorizontalStackLayout> 
         </VerticalStackLayout>

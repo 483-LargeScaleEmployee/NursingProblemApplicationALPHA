@@ -1,3 +1,5 @@
+using CommunityToolkit.Maui.Views;
+
 namespace NursingProblemApplicationALPHA;
 
 public partial class UpperManagementPage : ContentPage
@@ -47,14 +49,27 @@ public partial class UpperManagementPage : ContentPage
         {
             _ImageRotation = value;
             OnPropertyChanged(nameof(ImageRotation)); // Notify the UI that the property has changed
+
+        }
+    }
+
+    //change department in title
+    private string _department = "NONE";
+    public string department
+    {
+        get => _department;
+        set
+        {
+            _department = value;
+            OnPropertyChanged(nameof(department)); // Notify the UI that the property has changed
         }
     }
 
 
-	public UpperManagementPage()
+    public UpperManagementPage()
 	{
 		InitializeComponent();
-		BindingContext = this;  //Lets the XAML file access the property
+        BindingContext = this;  //Lets the XAML file access the property
 	}
 
     private void NextButton_Clicked(object sender, EventArgs e) //changes which week is in view for 1 week view mode
@@ -82,6 +97,17 @@ public partial class UpperManagementPage : ContentPage
 			NextVisable = true;
 
 		}
+    }
+    private async void Change_Department(object sender, EventArgs e)	//Opens departmentPopup
+    {
+        var result = await this.ShowPopupAsync(new DepartmentPopup());
+        //Should open a popup with department list
+
+        if (result is string departmentName)
+        {
+            department = departmentName;    //Changes Department title
+            _department = department;
+        }
     }
 
 
