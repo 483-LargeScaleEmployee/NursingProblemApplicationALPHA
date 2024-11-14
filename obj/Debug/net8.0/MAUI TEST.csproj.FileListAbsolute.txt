@@ -1,0 +1,17 @@
+/Users/tomisinsalu/Desktop/MAUI TEST/bin/Debug/net8.0/MAUI TEST
+/Users/tomisinsalu/Desktop/MAUI TEST/bin/Debug/net8.0/MAUI TEST.deps.json
+/Users/tomisinsalu/Desktop/MAUI TEST/bin/Debug/net8.0/MAUI TEST.runtimeconfig.json
+/Users/tomisinsalu/Desktop/MAUI TEST/bin/Debug/net8.0/MAUI TEST.dll
+/Users/tomisinsalu/Desktop/MAUI TEST/bin/Debug/net8.0/MAUI TEST.pdb
+/Users/tomisinsalu/Desktop/MAUI TEST/bin/Debug/net8.0/CsvHelper.dll
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.csproj.AssemblyReference.cache
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.AssemblyInfoInputs.cache
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.AssemblyInfo.cs
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.csproj.CoreCompileInputs.cache
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.csproj.Up2Date
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.dll
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/refint/MAUI TEST.dll
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.pdb
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/MAUI TEST.genruntimeconfig.cache
+/Users/tomisinsalu/Desktop/MAUI TEST/obj/Debug/net8.0/ref/MAUI TEST.dll

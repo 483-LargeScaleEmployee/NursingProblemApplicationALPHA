@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GjS0QoK7AFY=",
+  "success": true,
+  "projectFilePath": "/Users/tomisinsalu/Desktop/MAUI TEST/MAUI TEST.csproj",
+  "expectedPackageFiles": [
+    "/Users/tomisinsalu/.nuget/packages/csvhelper/33.0.1/csvhelper.33.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
