@@ -1,5 +1,10 @@
 ﻿
+using CommunityToolkit.Maui.Storage;
 using Microsoft.UI.Xaml;
+using System.Diagnostics;
+using System.Reflection;
+using Windows.Gaming.Input.ForceFeedback;
+using Windows.Media.AppBroadcasting;
 
 namespace NursingProblemApplicationALPHA;
 
@@ -183,28 +188,43 @@ public partial class MainPage : ContentPage
 	
     private async void ImportFile_Clicked(object sender, EventArgs e) //Button that lets you import files
     {
-		var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-		{
-			{DevicePlatform.WinUI, new[] {".csv"}} //This should only let you import csv files
-		
-		});
+
+        //Prompts User with picking the input folder
+        var inputFolder = await FolderPicker.PickAsync(default);
+        string inputFolderPath = inputFolder.Folder.Path;
 
 
+        //Sets the output folder so we always know where it is.
+        //Output located @ NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppX\Output
+        string outputFolderPath = Path.Combine(AppContext.BaseDirectory, "Output");
+        
+        if (!Directory.Exists(outputFolderPath))
+        {
+            //if there is no output directory, create a new one
+            Directory.CreateDirectory(outputFolderPath);
+        }
 
-		var result = await FilePicker.PickAsync(new PickOptions
-		{
-			PickerTitle = "Import CSV",
-			FileTypes = customFileType
-		});
+        var processStartInfo = new ProcessStartInfo
+        {
+            //if new algo.exe is realsed, go to properties, then build action, then send to content
+            //Set copy output directory to copy if newer
+            //do this with both algo.exe & the .dll file that goes with it
+            FileName = Path.Combine(AppContext.BaseDirectory, "linear algebra release 29", "algo.exe"),
+            Arguments = $"\"{inputFolderPath}\" \"{outputFolderPath}\"",
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+        };
 
-		if (result == null){
-			return;
-		}
+        //Runs algorithm
+        using var process = new Process { StartInfo = processStartInfo };
+        process.Start();
 
-		var stream = await result.OpenReadAsync();  //I dont know what this line does for sure, I think it reads the file
+        //add something here that indicates that the program is loading, you can only tell by hovering your mouse over the top of the window right now
+        process.WaitForExit();
+
 
     }
-
-
 }
 

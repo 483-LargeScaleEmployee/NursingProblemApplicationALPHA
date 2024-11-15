@@ -180,7 +180,7 @@
                     />
                 
                 <Button
-                    Text ="Import File"
+                    Text ="Import Directory"
                     BackgroundColor ="Purple"
                     BorderWidth ="2"
                     BorderColor ="Black"

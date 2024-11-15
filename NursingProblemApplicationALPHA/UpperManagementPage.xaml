@@ -171,15 +171,6 @@
                     />
 
                 <Button
-                    Text ="Import File"
-                    BackgroundColor ="Green"
-                    BorderWidth ="2"
-                    BorderColor ="Black"
-                    TextColor ="Black"
-                    Clicked="ImportFile_Clicked"
-                    ToolTipProperties.Text="Clickable"/>
-
-                <Button
                     Text ="Change Department"
                     BackgroundColor ="LightCoral"
                     BorderWidth ="2"
