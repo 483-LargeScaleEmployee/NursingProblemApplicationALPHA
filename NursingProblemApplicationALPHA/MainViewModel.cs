@@ -15,10 +15,19 @@ public class MainViewModel : INotifyPropertyChanged
     public bool Wireframe { get; set; } = false;
     public RenderMode Mode => Wireframe ? RenderMode.Wireframe : RenderMode.Solid;
 
-    private const int CUBE_LENGTH = 10;
-    private const int CUBE_WIDTH = 14; //14 original
-    private const int CUBE_HEIGHT = 3; //3 original
-    private const double POINT_DIST = 10;
+    /*
+     *  Starting view: 
+     *          Y |__ 
+     *              X   
+     * 
+     *           Z is dept
+     */
+
+
+    private const int CUBE_X = 14; // Days
+    private const int CUBE_Y = 3;  // Shifts
+    private const int CUBE_Z = 10; // Users
+    private const double POINT_DIST = 25;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -33,7 +42,7 @@ public class MainViewModel : INotifyPropertyChanged
         new Vector3() { X = -100, Y = +100, Z = +100 },
         new Vector3() { X = +100, Y = +100, Z = +100 }
     };
-    public IList<Vector3> CubePoints => makeCubePoints(CUBE_LENGTH, CUBE_WIDTH, CUBE_HEIGHT);
+    public IList<Vector3> CubePoints => makeCubePoints();
 
     IList<Face> _cubeFaces = new List<Face>()
     {
@@ -100,22 +109,45 @@ public class MainViewModel : INotifyPropertyChanged
         return Delta;
     }
 
-    // Takes dimension lengths and generates point set
-    public IList<Vector3> makeCubePoints(int length, int width, int height)
+    /* Uses Cube dimension constants to generate point array.
+     * 
+     * 
+     */
+    public IList<Vector3> makeCubePoints()
     {
+
         IList<Vector3> points = new List<Vector3>();
 
         /*  BOUNDS */
 
-        int x_higher = ((length + 1)); // / 2);
-        int x_lower = 0; // -1 * x_higher;
+        // CUBE_X, CUBE_Y, CUBE_Z
+        // Upper bounds are non-inclusive.
+        int x_higher = ((CUBE_X + 1) / 2);             //((CUBE_X + 1)); 
+        int x_lower = -1 * x_higher;                   // 0;
 
-        int y_higher = ((width + 1)); // / 2); 
-        int y_lower = 0;//-1 * y_higher;
+        int y_higher = ((CUBE_Y + 1) / 2);               //((CUBE_Y + 1));
+        int y_lower = -1 * y_higher;                   // 0;
 
-        int z_higher = (height + 1);
+        int z_higher = (CUBE_Z + 1); 
         int z_lower = 0;
 
+        for (int user = z_lower; user <= z_higher; user++)
+        {
+            for (int day = x_lower; day <= x_higher; day++)
+            {
+                for (int shift = y_lower; shift < y_higher; shift++)
+                {
+                    points.Add(new Vector3()
+                    {
+                        X = (float)(day * POINT_DIST),
+                        Y = (float)(shift * POINT_DIST),
+                        Z = (float)(user * POINT_DIST)
+                    });
+                }
+            }
+        }
+
+        /*
         for (int x = x_lower; x < x_higher; x++)
         {
             for (int y = y_lower; y < y_higher; y++)
@@ -131,7 +163,7 @@ public class MainViewModel : INotifyPropertyChanged
                 }
             }
         }
-
+        */
         return points;
 
     }
@@ -143,18 +175,18 @@ public class MainViewModel : INotifyPropertyChanged
     {
         IList<Face> faces = new List<Face>();
 
-        for (int x = 0; x < CUBE_LENGTH + 1; x++)
+        for (int user = 0; user < (CUBE_Z + 1); user++)
         {
                 // At this point here, we have a 14 x 3 grid of faces to create.
                 // (14 + 1) * (3 + 1) = 60
-            for (int i = 0; i < ((CUBE_WIDTH + 1) * (CUBE_HEIGHT + 1)); i++)
+            for (int i = 0; i < ((CUBE_X + 1) * (CUBE_Y + 1)); i++)
             {
-                if (((i % 2) != 0) && (i > (CUBE_HEIGHT + 1))) 
+                if (((i % 4) > 0) && (i > (CUBE_Y + 1))) 
                 {
                     faces.Add(new Face()
                     {
-                        Vertices = new List<int>() { ((i - (CUBE_HEIGHT + 1)) - 1), ((i - (CUBE_HEIGHT + 1))), (i), (i - 1)  },
-                        Color = (x % 2 == 0) ? Colors.Red : Colors.Blue
+                        Vertices = new List<int>() { ((i - (CUBE_Y + 1)) - 1), ((i - (CUBE_Y + 1))), (i), (i - 1) },
+                        Color = (user % 2 == 0) ? Colors.Red : Colors.Blue
                     });
                 }
                 
