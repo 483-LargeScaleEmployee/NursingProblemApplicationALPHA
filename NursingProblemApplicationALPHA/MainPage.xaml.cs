@@ -3,6 +3,7 @@ using CommunityToolkit.Maui.Storage;
 using Microsoft.UI.Xaml;
 using System.Diagnostics;
 using System.Reflection;
+using System.Threading;
 using Windows.Gaming.Input.ForceFeedback;
 using Windows.Media.AppBroadcasting;
 
@@ -191,6 +192,12 @@ public partial class MainPage : ContentPage
 
         //Prompts User with picking the input folder
         var inputFolder = await FolderPicker.PickAsync(default);
+
+        if (inputFolder.IsSuccessful == false)
+        {
+            return; // Exit the method if the user canceled
+        }
+
         string inputFolderPath = inputFolder.Folder.Path;
 
 
@@ -223,7 +230,6 @@ public partial class MainPage : ContentPage
 
         //add something here that indicates that the program is loading, you can only tell by hovering your mouse over the top of the window right now
         process.WaitForExit();
-
 
     }
 }
