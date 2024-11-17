@@ -10,7 +10,7 @@ public partial class App : Application
 		MainPage = new AppShell();
 	}
 
-    private List<Employee> LoadMockEmployees(){
+    private List<Employee> LoadEmployees(){
         //CSV PARSING LOGIC HERE 
     }
 
