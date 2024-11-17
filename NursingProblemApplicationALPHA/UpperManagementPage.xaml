@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NursingProblemApplicationALPHA.UpperManagementPage"
+             Title="UpperManagementPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <HorizontalStackLayout Spacing="5">
+                <Label
+                    Text="Department: "/>
+
+                <Label
+                    Text="{Binding department}"/>
+                
+            </HorizontalStackLayout>
+
+            <!--add way to see 2 weeks at once through options menu, horizontal scroll-->
+            <!--Horizontal Layout (Time Labels, Absolute layout, Next Arrow)-->
+            <ScrollView Orientation="Horizontal">    
+                <HorizontalStackLayout>
+                    <!--Time Labels-->
+                    <AbsoluteLayout> <!--x, y, width, height-->
+                        <Label
+                            Text="12 AM"
+                            AbsoluteLayout.LayoutBounds="0, 60"/>
+
+                        <Label
+                            Text="8 AM"
+                            AbsoluteLayout.LayoutBounds="8, 175"/>  <!--8 nudge so AM & PM line up-->
+
+                        <Label
+                            Text="4 PM"
+                            AbsoluteLayout.LayoutBounds="8, 300"/>
+                        
+                        <Label
+                            Text="12 AM"
+                            AbsoluteLayout.LayoutBounds="0, 415"/>
+                    </AbsoluteLayout>
+
+                    <!--Creates Week 1 Grid View-->
+                    <Grid Padding="10" IsVisible="{Binding GridOneBool}">
+                        <!--Creates 3 Rows & 7 Columns-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="125"/>
+                            <RowDefinition Height="125"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>   
+                            <ColumnDefinition Width="125"/>                        
+                        </Grid.ColumnDefinitions>
+
+                        <!--This block of buttons is for the Mon-Sun labels, buttons only need to work on the upper management screen-->
+                        <Button Text="Monday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Tuesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Wednesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Thursday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Friday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Saturday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Sunday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>                        
+
+                        <!--This Formatting is Temporay, But it makes all the buttons & makes them white to use the grid bg as a border-->
+                        <!--Eventually Replace the Button text with data from shifts and button color with shift color-->
+                        <!--I think for button text to be readable we should pick shift colors that work well with black-->
+                        <Button Text="Row 1 Column 1" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 2" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 3" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 4" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 5" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 6" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 7" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 1" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 2" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 3" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 4" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 5" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 6" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 7" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 1" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 2" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 3" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 4" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 5" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 6" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 7" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+
+                    </Grid>
+
+                    <!--Creates Week 2 Grid View-->
+                    <Grid Padding="10" IsVisible="{Binding GridTwoBool}">
+                        <!--Creates 3 Rows & 7 Columns-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>                            
+                            <RowDefinition Height="125"/>
+                            <RowDefinition Height="125"/>
+                            <RowDefinition Height="125"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="125"/>   
+                            <ColumnDefinition Width="125"/>                        
+                        </Grid.ColumnDefinitions>
+
+                        <!--Day Buttons-->
+                        <Button Text="Monday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Tuesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Wednesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Thursday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Friday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Saturday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Sunday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>                        
+
+                        <!--Schedule Buttons-->
+                        <Button Text="Row 1 Column 8" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 9" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 10" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 11" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 12" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 13" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 1 Column 14" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 8" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 9" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 10" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 11" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 12" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 13" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 2 Column 14" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 8" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 9" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 10" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 11" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 12" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 13" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="Row 3 Column 14" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+
+                    </Grid>
+
+                    <ImageButton
+                        Source="{Binding ImageRotation}"
+                        HeightRequest="70"
+                        Aspect="AspectFit"
+                        Clicked="NextButton_Clicked"
+                        IsVisible ="{Binding NextVisable}"
+                        ToolTipProperties.Text="Clickable"/>
+
+                </HorizontalStackLayout>
+            </ScrollView>   
+
+            <!--This button isnt where I want it to be, but it can be moved later--> 
+            <HorizontalStackLayout>   
+                <Button
+                    Text ="Toggle Week View"
+                    BackgroundColor ="Cyan"
+                    BorderWidth ="2"
+                    BorderColor ="Black"
+                    TextColor ="Black"
+                    Clicked="WeekView_Clicked"
+                    ToolTipProperties.Text="Clickable"
+                    />
+
+                <Button
+                    Text ="Change Department"
+                    BackgroundColor ="LightCoral"
+                    BorderWidth ="2"
+                    BorderColor ="Black"
+                    TextColor ="Black"
+                    Clicked="Change_Department"
+                    ToolTipProperties.Text="Clickable"/>
+
+
+            </HorizontalStackLayout> 
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
