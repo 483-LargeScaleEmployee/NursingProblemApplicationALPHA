@@ -13,7 +13,7 @@ namespace NursingProblemApplicationALPHA;
 public class MainViewModel : INotifyPropertyChanged
 {
     public bool Wireframe { get; set; } = false;
-    public RenderMode Mode => Wireframe ? RenderMode.Wireframe : RenderMode.Solid;
+    public RenderMode Mode => Wireframe ? RenderMode.Solid : RenderMode.Wireframe;
 
     /*
      *  Starting view: 
@@ -27,34 +27,32 @@ public class MainViewModel : INotifyPropertyChanged
     private const int CUBE_X = 14; // Days
     private const int CUBE_Y = 3;  // Shifts
     private const int CUBE_Z = 10; // Users
+    private const int POINTS_PER_USER = (CUBE_X + 1) * (CUBE_Y + 1);
     private const double POINT_DIST = 25;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    IList<Vector3> _cubePoints = new List<Vector3>()
+    IList<Vector3> _cubePoints = new List<Vector3>() { };
+    public IList<Vector3> CubePoints
     {
-        new Vector3() { X = -100, Y = -100, Z = -100 },
-        new Vector3() { X = +100, Y = -100, Z = -100 },
-        new Vector3() { X = -100, Y = +100, Z = -100 },
-        new Vector3() { X = +100, Y = +100, Z = -100 },
-        new Vector3() { X = -100, Y = -100, Z = +100 },
-        new Vector3() { X = +100, Y = -100, Z = +100 },
-        new Vector3() { X = -100, Y = +100, Z = +100 },
-        new Vector3() { X = +100, Y = +100, Z = +100 }
-    };
-    public IList<Vector3> CubePoints => makeCubePoints();
+        get => _cubePoints;
+        set
+        {
+            _cubePoints = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CubePoints)));
+        }
+    }
 
-    IList<Face> _cubeFaces = new List<Face>()
+    private IList<Face> _cubeFaces = new List<Face>() { };
+    public IList<Face> CubeFaces
     {
-        new Face() { Vertices = new List<int> {1,0,2,3}, Color = Colors.Red },
-        new Face() { Vertices = new List<int> {4,5,7,6}, Color = Colors.Orange },
-        new Face() { Vertices = new List<int> {2,0,4,6}, Color = Colors.Yellow },
-        new Face() { Vertices = new List<int> {1,3,7,5}, Color = Colors.White },
-        new Face() { Vertices = new List<int> {0,1,5,4}, Color = Colors.Blue },
-        new Face() { Vertices = new List<int> {3,2,6,7}, Color = Colors.Green }
-    };
-
-    public IList<Face> CubeFaces => makeCubeFaces(CubePoints);
+        get => _cubeFaces;
+        set
+        {
+            _cubeFaces = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CubeFaces)));
+        }
+    }
 
     private Matrix4x4 _cubeTransform = Matrix4x4.Identity;
     public Matrix4x4 CubeTransform
@@ -67,6 +65,8 @@ public class MainViewModel : INotifyPropertyChanged
         }
     }
 
+    public String PointArraySize => getCubePointsSize().ToString();
+
     private IDispatcherTimer _timer;
 
     public Matrix4x4 Delta { get; set; } =
@@ -77,6 +77,8 @@ public class MainViewModel : INotifyPropertyChanged
 
     public MainViewModel()
     {
+        CubePoints = makeCubePoints();
+        CubeFaces = makeCubeFaces(CubePoints);
         ToggleRenderModeCommand = new Command(() => ToggleRenderMode());
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ToggleRenderModeCommand)));
         _timer = App.Current.Dispatcher.CreateTimer();
@@ -86,6 +88,14 @@ public class MainViewModel : INotifyPropertyChanged
         {
             CubeTransform = Matrix4x4.Multiply(CubeTransform, Delta);
         };
+
+        /*
+         * A couple test color cases, remove!.
+         * 
+         */
+        modifyFaceColor(CUBE_Z, 4, 2, Colors.LimeGreen);
+        modifyFaceColor(CUBE_Z, 5, 2, Colors.LimeGreen);
+        modifyFaceColor(CUBE_Z, 3, 2, Colors.LimeGreen);
 
         _timer.Start();
     }
@@ -109,6 +119,12 @@ public class MainViewModel : INotifyPropertyChanged
         return Delta;
     }
 
+    public int getCubePointsSize()
+    {
+        return CubePoints.Count;
+    }
+
+
     /* Uses Cube dimension constants to generate point array.
      * 
      * 
@@ -125,11 +141,11 @@ public class MainViewModel : INotifyPropertyChanged
         int x_higher = ((CUBE_X + 1) / 2);             //((CUBE_X + 1)); 
         int x_lower = -1 * x_higher;                   // 0;
 
-        int y_higher = ((CUBE_Y + 1) / 2);               //((CUBE_Y + 1));
+        int y_higher = ((CUBE_Y + 1) / 2);             //((CUBE_Y + 1));
         int y_lower = -1 * y_higher;                   // 0;
 
-        int z_higher = (CUBE_Z + 1); 
-        int z_lower = 0;
+        int z_higher = (CUBE_Z + 1) / 2; 
+        int z_lower = -1 * z_higher;
 
         for (int user = z_lower; user <= z_higher; user++)
         {
@@ -147,55 +163,48 @@ public class MainViewModel : INotifyPropertyChanged
             }
         }
 
-        /*
-        for (int x = x_lower; x < x_higher; x++)
-        {
-            for (int y = y_lower; y < y_higher; y++)
-            {
-                for (int z = z_lower; z < z_higher; z++)
-                {
-                    points.Add(new Vector3()
-                    {
-                        X = (float)(x * POINT_DIST),
-                        Y = (float)(y * POINT_DIST),
-                        Z = (float)(z * POINT_DIST)
-                    });
-                }
-            }
-        }
-        */
         return points;
 
     }
 
-    //  Try rewritting loops to make full cubes every 2 USERS (x depth).
-
+    
     // Takes point set and generates faces iteratively
     public IList<Face> makeCubeFaces(IList<Vector3> points)
     {
         IList<Face> faces = new List<Face>();
+        int user_offset;
 
         for (int user = 0; user < (CUBE_Z + 1); user++)
         {
+            user_offset = (POINTS_PER_USER * user);
+
                 // At this point here, we have a 14 x 3 grid of faces to create.
                 // (14 + 1) * (3 + 1) = 60
-            for (int i = 0; i < ((CUBE_X + 1) * (CUBE_Y + 1)); i++)
+            for (int i = 0; i < POINTS_PER_USER; i++)
             {
                 if (((i % 4) > 0) && (i > (CUBE_Y + 1))) 
                 {
                     faces.Add(new Face()
                     {
-                        Vertices = new List<int>() { ((i - (CUBE_Y + 1)) - 1), ((i - (CUBE_Y + 1))), (i), (i - 1) },
-                        Color = (user % 2 == 0) ? Colors.Red : Colors.Blue
+                        Vertices = new List<int>() { user_offset + ((i - (CUBE_Y + 1)) - 1), user_offset + ((i - (CUBE_Y + 1))), user_offset + (i), user_offset + (i - 1) },
+                        Color = (user % 2 == 0) ? Colors.DarkRed : Colors.Blue
                     });
                 }
-                
             }
         }
 
             // At this point we have a { USER COUNT } amount of 14x3 grids
 
-
         return faces;
+    }
+
+    // Faces are referenced by their top right point
+    public void modifyFaceColor(int user, int day, int shift, Microsoft.Maui.Graphics.Color desiredColor)
+    {
+        user = user * (CUBE_X) * (CUBE_Y);
+        day = day * (CUBE_Y);
+
+        CubeFaces.ElementAt(user+day+shift).Color = Colors.Green;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CubeFaces)));
     }
 }

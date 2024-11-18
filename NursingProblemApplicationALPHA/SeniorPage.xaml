@@ -10,9 +10,27 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid RowDefinitions="*,Auto">
+    <Grid x:Name="gridSeniorPage">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        
         <local:Shape3D
-            WidthRequest="400"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            WidthRequest="500"
             HeightRequest="400"
             Points="{Binding CubePoints}"
             Faces="{Binding CubeFaces}"
@@ -20,26 +38,52 @@
             Mode="{Binding Mode}" />
 
         <Button
-            Grid.Row="1"
+            Grid.Row="3"
+            Grid.Column="2"
+            Grid.ColumnSpan="1"
+            HorizontalOptions="Center"
             Text="Toggle Render Mode"
-            Command="{Binding ToggleRenderModeCommand}"
-            HorizontalOptions="Center" />
+            Command="{Binding ToggleRenderModeCommand}" />
 
         <Button
             x:Name="buttonRotateRight"
-            Grid.Row="1"
-            Text="Rotate Cube Right"
-            HorizontalOptions="End"
+            Grid.Row="3"
+            Grid.Column="4"
+            Text="Rotate Right"
             Pressed="buttonRotateRight_Pressed"
             Released="buttonRotateRight_Released" />
 
         <Button
             x:Name="buttonRotateLeft"
-            Grid.Row="1"
-            Text="Rotate Cube Left"
-            HorizontalOptions="Start"
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Rotate Left"
             Pressed="buttonRotateLeft_Pressed" 
             Released="buttonRotateLeft_Released" />
+        
+        <Label
+            x:Name="labelPointArraySize"
+            Grid.Row="0"
+            Grid.Column="4"
+            Text="{Binding PointArraySize}" />
+
+        <Picker 
+            x:Name="pickerFilter1" 
+            Grid.Row="0"
+            Grid.Column="1" 
+            Title="Filter 1"
+            HorizontalTextAlignment="Center"
+            ItemsSource="{Binding DeptList}"
+            />
+
+        <Picker 
+            x:Name="pickerFilter2" 
+            Grid.Row="0"
+            Grid.Column="3" 
+            Title="Filter 2"
+            HorizontalTextAlignment="Center"
+            ItemsSource="{Binding RoleList}"
+            />
     </Grid>
     
 </ContentPage>
