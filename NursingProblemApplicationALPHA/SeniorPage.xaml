@@ -30,7 +30,7 @@
             Grid.Column="1"
             Grid.RowSpan="2"
             Grid.ColumnSpan="3"
-            WidthRequest="500"
+            WidthRequest="700"
             HeightRequest="400"
             Points="{Binding CubePoints}"
             Faces="{Binding CubeFaces}"
@@ -67,23 +67,115 @@
             Grid.Column="4"
             Text="{Binding PointArraySize}" />
 
-        <Picker 
-            x:Name="pickerFilter1" 
+        <Grid
+            x:Name="gridFilter1"
             Grid.Row="0"
-            Grid.Column="1" 
-            Title="Filter 1"
-            HorizontalTextAlignment="Center"
-            ItemsSource="{Binding DeptList}"
+            Grid.Column="1" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" /> <!-- Label: Filter1 -->
+                <RowDefinition Height="*" /> <!-- Picker: Filter1 -->
+            </Grid.RowDefinitions>
+
+            <Label
+                x:Name="labelFilter1"
+                Grid.Row="0"
+                Text="Department"
+                HorizontalTextAlignment="Center"
+            />
+            
+            <Picker 
+                x:Name="pickerFilter1" 
+                Grid.Row="1"
+                HorizontalTextAlignment="Center"
+                ItemsSource="{Binding DepartmentList}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedIndexChanged="pickerFilter1_SelectedIndexChanged"   
+            />
+        </Grid>
+
+        <Grid
+            x:Name="gridFilter2"
+            Grid.Row="0"
+            Grid.Column="3" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" /> <!-- Label: Filter2 -->
+                <RowDefinition Height="*" /> <!-- Picker: Filter2 -->
+            </Grid.RowDefinitions>
+
+            <Label
+                x:Name="labelFilter2"
+                Grid.Row="0"
+                Text="Role"
+                HorizontalTextAlignment="Center"
             />
 
-        <Picker 
-            x:Name="pickerFilter2" 
-            Grid.Row="0"
-            Grid.Column="3" 
-            Title="Filter 2"
-            HorizontalTextAlignment="Center"
-            ItemsSource="{Binding RoleList}"
+            <Picker 
+                x:Name="pickerFilter2" 
+                Grid.Row="1"
+                HorizontalTextAlignment="Center"
+                ItemsSource="{Binding RoleList}"
+                SelectedIndexChanged="pickerFilter2_SelectedIndexChanged"
             />
+
+        </Grid>
+        
+        <Grid x:Name="gridUserSelect"
+              Grid.Row="0"
+              Grid.Column="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" /> <!-- Button: UserBack -->
+                <ColumnDefinition Width="2*" /> <!-- Label: CurrentUser -->
+                <ColumnDefinition Width="1*" /> <!-- Button: UserFwd -->
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="buttonUserBack" 
+                Grid.Column="0" 
+                FontSize="18"
+                Text="-"
+                Clicked="buttonUserBack_Clicked" />
+
+            <Label
+                x:Name="labelCurrentUser"
+                Grid.Column="1" />
+
+            <Button
+                x:Name="buttonUserFwd" 
+                Grid.Column="2"
+                FontSize="18"
+                Text="+"
+                Clicked="buttonUserFwd_Clicked" />
+        </Grid>
+
+        <Grid
+            x:Name="gridEmployeeInformation"
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.RowSpan="2" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />  <!--  -->
+                <RowDefinition Height="3*" />  <!-- ScrollView: EmployeeList -->
+                <RowDefinition Height="1*" />  <!--  -->
+            </Grid.RowDefinitions>
+
+            <ListView
+                x:Name="listViewEmployeeList"
+                Grid.Row="1" 
+                ItemsSource="{Binding EmployeeList}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+                
+            </ListView>
+
+        </Grid>
     </Grid>
     
 </ContentPage>

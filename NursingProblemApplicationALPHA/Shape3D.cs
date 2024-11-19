@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
+using Microsoft.Maui.Graphics.Text;
 
 namespace NursingProblemApplicationALPHA;
 
@@ -30,6 +31,9 @@ public class Shape3D : GraphicsView, IDrawable
     public static readonly BindableProperty ModeProperty
         = BindableProperty.Create(nameof(Mode), typeof(RenderMode), typeof(Shape3D), propertyChanged: RequestInvalidate);
 
+    public static readonly BindableProperty UserAxisTagsProperty
+        = BindableProperty.Create(nameof(UserAxisTags), typeof(IList<String>), typeof(Shape3D), propertyChanged: RequestInvalidate);
+
     public IList<Vector3> Points 
     {
         get => (List<Vector3>)GetValue(PointsProperty);
@@ -54,6 +58,12 @@ public class Shape3D : GraphicsView, IDrawable
     {
         get => (RenderMode)GetValue(ModeProperty); 
         set => SetValue(ModeProperty, value);
+    }
+
+    public IList<String> UserAxisTags
+    {
+        get => (IList<String>)GetValue(UserAxisTagsProperty);
+        set => SetValue(UserAxisTagsProperty, value);
     }
 
     private static void RequestInvalidate(BindableObject obj, object oldVal, object newVal)
@@ -94,8 +104,10 @@ public class Shape3D : GraphicsView, IDrawable
         }
 
         List<Point> points = new List<Point>(Points.Select(point => Project(point, dirtyRect.Center)));
+        int count = 0;
         foreach (var f in Faces)
         {
+
             Point point0 = points[f.Vertices[0]];
             Point point1 = points[f.Vertices[1]];
             Point point2 = points[f.Vertices[2]];
@@ -132,6 +144,27 @@ public class Shape3D : GraphicsView, IDrawable
             {
                 canvas.FillColor = f.Color;
                 canvas.FillPath(path);
+
+                canvas.StrokeColor = Colors.White;
+                canvas.StrokeSize = 1;
+                canvas.DrawPath(path);
+
+                /*
+                    // Put user name in bottom left
+                if (count == 0)
+                {
+                    canvas.FontColor = Colors.Red;
+                    canvas.FontSize = 8;
+                    canvas.DrawString("aBcD", (float)points[f.Vertices[0]].X, (float)points[f.Vertices[0]].Y, HorizontalAlignment.Right);
+                }
+                    // Reset count for next "user"
+                if (count == ((14 * 3) - 1))
+                {
+                    count = 0;
+                }
+
+                count += 1;
+                */
             }
 
                 // For wireframe rendering
@@ -141,6 +174,7 @@ public class Shape3D : GraphicsView, IDrawable
                 canvas.StrokeSize = 1;
                 canvas.StrokeDashPattern = isFaceHidden ? HiddenFaceDashPattern : null;
                 canvas.DrawPath(path);
+
             }
         }
     }

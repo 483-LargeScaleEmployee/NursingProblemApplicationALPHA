@@ -17,20 +17,32 @@ public class MainViewModel : INotifyPropertyChanged
 
     /*
      *  Starting view: 
-     *          Y |__ 
-     *              X   
+     *          Y - shift |__ 
+     *                      X - day   
      * 
-     *           Z is dept
+     *           Z is usear
      */
 
 
     private const int CUBE_X = 14; // Days
     private const int CUBE_Y = 3;  // Shifts
-    private const int CUBE_Z = 10; // Users
+    //private int CUBE_Z = 10; // Users
     private const int POINTS_PER_USER = (CUBE_X + 1) * (CUBE_Y + 1);
-    private const double POINT_DIST = 25;
+    private const double POINT_DIST = 30;
 
     public event PropertyChangedEventHandler PropertyChanged;
+
+    int _cube_z = 10;
+
+    public int CUBE_Z
+    {
+        get => _cube_z;
+        set
+        {
+            _cube_z = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CUBE_Z)));
+        }
+    }
 
     IList<Vector3> _cubePoints = new List<Vector3>() { };
     public IList<Vector3> CubePoints
@@ -38,7 +50,7 @@ public class MainViewModel : INotifyPropertyChanged
         get => _cubePoints;
         set
         {
-            _cubePoints = value;
+            _cubePoints = makeCubePoints();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CubePoints)));
         }
     }
@@ -54,7 +66,12 @@ public class MainViewModel : INotifyPropertyChanged
         }
     }
 
-    private Matrix4x4 _cubeTransform = Matrix4x4.Identity;
+        // Due to the way faces are rendered, we start the cube rotated 180 deg.
+    private Matrix4x4 _cubeTransform = 
+        Matrix4x4.Multiply(
+            Matrix4x4.Identity, 
+            Matrix4x4.CreateRotationY((float)(180 * (Math.PI / 180)))
+        );//Matrix4x4.Identity;
     public Matrix4x4 CubeTransform
     {
         get => _cubeTransform;
@@ -155,9 +172,9 @@ public class MainViewModel : INotifyPropertyChanged
                 {
                     points.Add(new Vector3()
                     {
-                        X = (float)(day * POINT_DIST),
-                        Y = (float)(shift * POINT_DIST),
-                        Z = (float)(user * POINT_DIST)
+                        X = (float)(-day * POINT_DIST),
+                        Y = (float)(-shift * POINT_DIST),
+                        Z = (float)(-user * POINT_DIST)
                     });
                 }
             }
@@ -179,7 +196,7 @@ public class MainViewModel : INotifyPropertyChanged
             user_offset = (POINTS_PER_USER * user);
 
                 // At this point here, we have a 14 x 3 grid of faces to create.
-                // (14 + 1) * (3 + 1) = 60
+                // (14 + 1) * (3 + 1) = 60 points, (14 * 3) = 42 faces per user.
             for (int i = 0; i < POINTS_PER_USER; i++)
             {
                 if (((i % 4) > 0) && (i > (CUBE_Y + 1))) 
@@ -206,5 +223,13 @@ public class MainViewModel : INotifyPropertyChanged
 
         CubeFaces.ElementAt(user+day+shift).Color = Colors.Green;
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CubeFaces)));
+    }
+
+    public void setCubeDepth(int depth)
+    {
+        if(depth > 0)
+        {
+            CUBE_Z = depth;
+        }
     }
 }

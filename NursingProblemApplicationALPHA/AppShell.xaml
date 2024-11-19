@@ -12,7 +12,7 @@
   <TabBar>
     <ShellContent
         Title="Employee"
-        ContentTemplate="{DataTemplate local:SeniorPage}"
+        ContentTemplate="{DataTemplate local:MainPage}"
         Route="SeniorPage" />
 
     <ShellContent

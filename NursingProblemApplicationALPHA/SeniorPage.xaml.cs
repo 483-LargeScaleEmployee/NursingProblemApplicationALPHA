@@ -9,11 +9,11 @@ public partial class SeniorPage : ContentPage
     MainViewModel mainViewModel;
     const double ROTATION_SPEED = 1;
 
-    private readonly BindableProperty DeptListProperty = BindableProperty.Create(
-        nameof(DeptList), 
-        typeof(IList<String>), 
+    private readonly BindableProperty EmployeeListProperty = BindableProperty.Create(
+        nameof(EmployeeList), 
+        typeof(IList<Employee>), 
         typeof(SeniorPage), 
-        new List<String>() { "Oncology", "Emergency", "Pediatrics", "Orthopedics", "Neurology", "Psychiatry", "Gynecology", "ICU", "Radiology", "Cardiology" }
+        new List<Employee>() {  }
     );
 
     private readonly BindableProperty RoleListProperty = BindableProperty.Create(
@@ -23,10 +23,22 @@ public partial class SeniorPage : ContentPage
         new List<String>() { "Admin", "Nurse", "Doctor" }
     );
 
-    public IList<String> DeptList
+    private readonly BindableProperty DepartmentListProperty = BindableProperty.Create(
+        nameof(DepartmentList),
+        typeof(IList<Department>),
+        typeof(SeniorPage),
+        DepartmentInitializer.InitializeDepartments().Values.ToList()
+    );
+
+    public IList<Department> DepartmentList
     {
-        get => (IList<String>)GetValue(DeptListProperty);
-        set => SetValue(DeptListProperty, value);
+        get => (IList<Department>)GetValue(DepartmentListProperty); 
+        set => SetValue(DepartmentListProperty, value);
+    }
+    public IList<Employee> EmployeeList
+    {
+        get => (IList<Employee>)GetValue(EmployeeListProperty);
+        set => SetValue(EmployeeListProperty, value);
     }
 
     public IList<String> RoleList
@@ -37,14 +49,20 @@ public partial class SeniorPage : ContentPage
 
     public SeniorPage(MainViewModel VM)
 	{
-            // MVM is for code control
-            // BindingContext is for Maui backend control
+            // mainViewModel used for getters/setters between here and MainViewModel.
+            // BindingContext used for XAML/CS interactions
         mainViewModel = VM;
 		BindingContext = VM;
 		InitializeComponent();
 
         pickerFilter1.BindingContext = this;
         pickerFilter2.BindingContext = this;
+        gridFilter1.BindingContext = this;
+        gridFilter2.BindingContext = this;
+
+        
+            // Hide Role selection until Department selected
+        gridFilter2.IsVisible = false;
         
 	}
 
@@ -72,4 +90,31 @@ public partial class SeniorPage : ContentPage
         mainViewModel.setDelta(Matrix4x4.CreateRotationY((float)(0.0 * (Math.PI / 180))));
     }
 
+    private void pickerFilter2_SelectedIndexChanged(object sender, EventArgs e)
+    {
+            // Gather Employee List by Selected Role 
+        String selectedRole = RoleList[pickerFilter2.SelectedIndex];
+        EmployeeList = DepartmentList[pickerFilter1.SelectedIndex].GetEmployeesByRole(selectedRole);
+
+        mainViewModel.setCubeDepth(EmployeeList.Count);
+    }
+
+    private void pickerFilter1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+            // Gather Roles scheduled for department
+        RoleList = DepartmentList[pickerFilter1.SelectedIndex].getAllRoles();
+        
+            // Show role selection list
+        gridFilter2.IsVisible = true;
+    }
+
+    private void buttonUserBack_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonUserFwd_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
