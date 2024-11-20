@@ -220,11 +220,11 @@
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\next.scale-100.png">
       <PackagePath>next.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 29\algo.exe">
-      <PackagePath>linear algebra release 29\algo.exe</PackagePath>
+    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 59\algo.exe">
+      <PackagePath>linear algebra release 59\algo.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 29\glpk_4_65.dll">
-      <PackagePath>linear algebra release 29\glpk_4_65.dll</PackagePath>
+    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 59\glpk_4_65.dll">
+      <PackagePath>linear algebra release 59\glpk_4_65.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.deps.json">
       <PackagePath>NursingProblemApplicationALPHA.deps.json</PackagePath>
@@ -240,6 +240,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\communitytoolkit.maui.core\9.1.0\lib\net8.0-windows10.0.19041\CommunityToolkit.Maui.Core.dll">
       <PackagePath>CommunityToolkit.Maui.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\csvhelper\33.0.1\lib\net8.0\CsvHelper.dll">
+      <PackagePath>CsvHelper.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\microsoft.extensions.configuration\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>

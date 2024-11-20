@@ -188,6 +188,15 @@
                     Clicked="ImportFile_Clicked"
                     ToolTipProperties.Text="Clickable"/>
 
+                <Border Stroke="Black" StrokeLineCap="Round" StrokeThickness="2.5">
+
+                    <Entry x:Name="entry"
+                       WidthRequest="200"
+                       Placeholder="Enter Employee Name"
+                       PlaceholderColor="DarkSlateGray"
+                       Completed="OnEntryCompleted" />
+                </Border>
+
             </HorizontalStackLayout> 
         </VerticalStackLayout>
     </ScrollView>

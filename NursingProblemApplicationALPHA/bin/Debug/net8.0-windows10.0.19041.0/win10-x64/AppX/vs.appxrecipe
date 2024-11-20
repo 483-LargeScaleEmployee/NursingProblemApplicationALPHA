@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-11-15T07:05:46.272</Modified>
+      <Modified>2024-11-20T21:22:19.070</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-11-15T06:33:20.003</Modified>
+      <Modified>2024-11-20T20:58:37.954</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.runtimeconfig.json">
       <PackagePath>NursingProblemApplicationALPHA.runtimeconfig.json</PackagePath>
-      <Modified>2024-11-15T06:32:38.833</Modified>
+      <Modified>2024-11-19T05:53:55.617</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.dll">
       <PackagePath>NursingProblemApplicationALPHA.dll</PackagePath>
-      <Modified>2024-11-15T07:05:45.693</Modified>
+      <Modified>2024-11-20T21:22:18.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>NursingProblemApplicationALPHA.exe</PackagePath>
-      <Modified>2024-11-15T07:05:45.696</Modified>
+      <Modified>2024-11-20T21:22:18.519</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -55,23 +55,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:03.751</Modified>
+      <Modified>2024-11-19T05:53:41.775</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:03.766</Modified>
+      <Modified>2024-11-19T05:53:41.789</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:03.786</Modified>
+      <Modified>2024-11-19T05:53:41.810</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:03.819</Modified>
+      <Modified>2024-11-19T05:53:41.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:03.933</Modified>
+      <Modified>2024-11-19T05:53:41.956</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -83,227 +83,227 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2024-11-15T06:32:05.613</Modified>
+      <Modified>2024-11-19T05:53:43.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.604</Modified>
+      <Modified>2024-11-19T05:53:43.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.604</Modified>
+      <Modified>2024-11-19T05:53:43.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.604</Modified>
+      <Modified>2024-11-19T05:53:43.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.604</Modified>
+      <Modified>2024-11-19T05:53:43.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.603</Modified>
+      <Modified>2024-11-19T05:53:43.507</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.609</Modified>
+      <Modified>2024-11-19T05:53:43.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.609</Modified>
+      <Modified>2024-11-19T05:53:43.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.608</Modified>
+      <Modified>2024-11-19T05:53:43.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.609</Modified>
+      <Modified>2024-11-19T05:53:43.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.608</Modified>
+      <Modified>2024-11-19T05:53:43.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.610</Modified>
+      <Modified>2024-11-19T05:53:43.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.610</Modified>
+      <Modified>2024-11-19T05:53:43.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.609</Modified>
+      <Modified>2024-11-19T05:53:43.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.610</Modified>
+      <Modified>2024-11-19T05:53:43.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.610</Modified>
+      <Modified>2024-11-19T05:53:43.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.613</Modified>
+      <Modified>2024-11-19T05:53:43.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.612</Modified>
+      <Modified>2024-11-19T05:53:43.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.612</Modified>
+      <Modified>2024-11-19T05:53:43.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.612</Modified>
+      <Modified>2024-11-19T05:53:43.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.611</Modified>
+      <Modified>2024-11-19T05:53:43.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.611</Modified>
+      <Modified>2024-11-19T05:53:43.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.611</Modified>
+      <Modified>2024-11-19T05:53:43.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.610</Modified>
+      <Modified>2024-11-19T05:53:43.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.611</Modified>
+      <Modified>2024-11-19T05:53:43.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.611</Modified>
+      <Modified>2024-11-19T05:53:43.514</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.606</Modified>
+      <Modified>2024-11-19T05:53:43.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.606</Modified>
+      <Modified>2024-11-19T05:53:43.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.605</Modified>
+      <Modified>2024-11-19T05:53:43.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.605</Modified>
+      <Modified>2024-11-19T05:53:43.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.605</Modified>
+      <Modified>2024-11-19T05:53:43.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.607</Modified>
+      <Modified>2024-11-19T05:53:43.510</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.607</Modified>
+      <Modified>2024-11-19T05:53:43.510</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.606</Modified>
+      <Modified>2024-11-19T05:53:43.510</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.606</Modified>
+      <Modified>2024-11-19T05:53:43.510</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.606</Modified>
+      <Modified>2024-11-19T05:53:43.510</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.608</Modified>
+      <Modified>2024-11-19T05:53:43.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.608</Modified>
+      <Modified>2024-11-19T05:53:43.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.607</Modified>
+      <Modified>2024-11-19T05:53:43.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.607</Modified>
+      <Modified>2024-11-19T05:53:43.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.607</Modified>
+      <Modified>2024-11-19T05:53:43.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.605</Modified>
+      <Modified>2024-11-19T05:53:43.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.605</Modified>
+      <Modified>2024-11-19T05:53:43.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.604</Modified>
+      <Modified>2024-11-19T05:53:43.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.604</Modified>
+      <Modified>2024-11-19T05:53:43.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.604</Modified>
+      <Modified>2024-11-19T05:53:43.508</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\back.scale-100.png">
       <PackagePath>back.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.603</Modified>
+      <Modified>2024-11-19T05:53:43.506</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.614</Modified>
+      <Modified>2024-11-19T05:53:43.517</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.614</Modified>
+      <Modified>2024-11-19T05:53:43.517</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.613</Modified>
+      <Modified>2024-11-19T05:53:43.517</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.613</Modified>
+      <Modified>2024-11-19T05:53:43.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.613</Modified>
+      <Modified>2024-11-19T05:53:43.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\next.scale-100.png">
       <PackagePath>next.scale-100.png</PackagePath>
-      <Modified>2024-11-15T06:32:05.603</Modified>
+      <Modified>2024-11-19T05:53:43.506</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 29\algo.exe">
-      <PackagePath>linear algebra release 29\algo.exe</PackagePath>
-      <Modified>2024-11-09T17:29:10.000</Modified>
+    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 59\algo.exe">
+      <PackagePath>linear algebra release 59\algo.exe</PackagePath>
+      <Modified>2024-11-19T15:03:22.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 29\glpk_4_65.dll">
-      <PackagePath>linear algebra release 29\glpk_4_65.dll</PackagePath>
-      <Modified>2024-11-09T17:29:10.000</Modified>
+    <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 59\glpk_4_65.dll">
+      <PackagePath>linear algebra release 59\glpk_4_65.dll</PackagePath>
+      <Modified>2024-11-19T15:03:22.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.deps.json">
       <PackagePath>NursingProblemApplicationALPHA.deps.json</PackagePath>
-      <Modified>2024-11-15T06:33:19.901</Modified>
+      <Modified>2024-11-20T20:58:37.727</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.44\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -320,6 +320,10 @@
     <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\communitytoolkit.maui.core\9.1.0\lib\net8.0-windows10.0.19041\CommunityToolkit.Maui.Core.dll">
       <PackagePath>CommunityToolkit.Maui.Core.dll</PackagePath>
       <Modified>2024-09-27T08:04:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\csvhelper\33.0.1\lib\net8.0\CsvHelper.dll">
+      <PackagePath>CsvHelper.dll</PackagePath>
+      <Modified>2024-06-20T14:34:10.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\microsoft.extensions.configuration\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>

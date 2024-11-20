@@ -57,21 +57,37 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="linear algebra release 29\algo.exe" />
-	  <None Remove="linear algebra release 29\glpk_4_65.dll" />
+	  <AndroidResource Remove="linear algebra release 29\**" />
+	  <AndroidResource Remove="ViewModel\Tests\**" />
+	  <Compile Remove="linear algebra release 29\**" />
+	  <Compile Remove="ViewModel\Tests\**" />
+	  <EmbeddedResource Remove="linear algebra release 29\**" />
+	  <EmbeddedResource Remove="ViewModel\Tests\**" />
+	  <MauiCss Remove="linear algebra release 29\**" />
+	  <MauiCss Remove="ViewModel\Tests\**" />
+	  <MauiXaml Remove="linear algebra release 29\**" />
+	  <MauiXaml Remove="ViewModel\Tests\**" />
+	  <None Remove="linear algebra release 29\**" />
+	  <None Remove="ViewModel\Tests\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="linear algebra release 29\algo.exe">
+	  <None Remove="linear algebra release 59\algo.exe" />
+	  <None Remove="linear algebra release 59\glpk_4_65.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="linear algebra release 59\algo.exe">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
-	  <Content Include="linear algebra release 29\glpk_4_65.dll">
+	  <Content Include="linear algebra release 59\glpk_4_65.dll">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
+		<PackageReference Include="CsvHelper" Version="33.0.1" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
