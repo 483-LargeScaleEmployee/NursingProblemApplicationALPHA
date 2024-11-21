@@ -39,7 +39,6 @@ namespace ViewModel
             Colors.PaleVioletRed,
         };
 
-        // Add your departments here
 
         //There is currently nothing that prevents departments from sharing the same color, need to fix
         foreach (var departmentName in departmentNames)
@@ -48,6 +47,7 @@ namespace ViewModel
             departments.Add(departmentName, new Department(departmentName, randomColor));
         }
         
+
         return departments;
     }
     }

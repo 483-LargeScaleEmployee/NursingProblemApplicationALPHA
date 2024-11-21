@@ -3,39 +3,102 @@
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NursingProblemApplicationALPHA.DepartmentPopup"
-             Size="500,500"
+             Size="400,500"
              VerticalOptions="Center"
              HorizontalOptions="Center">
 
+    <Border Stroke="Black" StrokeLineCap="Round" StrokeThickness="2.5">
+        <VerticalStackLayout Padding="5" Spacing="5" Background="DarkGray">
 
-    <VerticalStackLayout>
+            <Button
+                        Text ="Pediatrics"
+                        BackgroundColor ="#CC2F00"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
+
+            <Button
+                        Text ="Neurology"
+                        BackgroundColor ="#DB6600"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
         
-        <Button
-                    Text ="Department 1"
-                    BackgroundColor ="LightSeaGreen"
-                    BorderWidth ="2"
-                    BorderColor ="Black"
-                    TextColor ="Black"
-                    Clicked="Change_Department"
-                    ToolTipProperties.Text="Clickable"/>
+            <Button
+                        Text ="Radiology"
+                        BackgroundColor ="#E39E00"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
 
-        <Button
-                    Text ="Department 2"
-                    BackgroundColor ="LightGoldenrodYellow"
-                    BorderWidth ="2"
-                    BorderColor ="Black"
-                    TextColor ="Black"
-                    Clicked="Change_Department"
-                    ToolTipProperties.Text="Clickable"/>
+            <Button
+                        Text ="Oncology"
+                        BackgroundColor ="#76B80D"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
 
-        <Button
-                    Text ="Department 3"
-                    BackgroundColor ="LightCyan"
-                    BorderWidth ="2"
-                    BorderColor ="Black"
-                    TextColor ="Black"
-                    Clicked="Change_Department"
-                    ToolTipProperties.Text="Clickable"/>
+            <Button
+                        Text ="Emergency"
+                        BackgroundColor ="#007668"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
+            <Button
+                        Text ="Cardiology"
+                        BackgroundColor ="#006486"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
 
-    </VerticalStackLayout>
+            <Button
+                        Text ="ICU"
+                        BackgroundColor ="#007CB5"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
+
+            <Button
+                        Text ="Psychiatry"
+                        BackgroundColor ="#465AB2"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
+
+            <Button
+                        Text ="Gynecology"
+                        BackgroundColor ="#6D47B1"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
+
+            <Button
+                        Text ="Orthopedics"
+                        BackgroundColor ="#873B9C"
+                        BorderWidth ="2"
+                        BorderColor ="Black"
+                        TextColor ="Black"
+                        Clicked="Change_Department"
+                        ToolTipProperties.Text="Clickable"/>
+
+        </VerticalStackLayout>
+    </Border>
 </mct:Popup>

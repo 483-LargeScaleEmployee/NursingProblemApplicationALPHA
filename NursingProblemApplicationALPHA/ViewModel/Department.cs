@@ -18,6 +18,7 @@ public class Department
         Employees = new HashSet<Employee>();
         Schedule = Enumerable.Range(1, 42)
             .ToDictionary(i => i, _ => new HashSet<Employee>());
+        AddOptimalStaffing(name);
     }
 
     public void AddEmployeeToShift(Employee employee, int shiftNumber)
@@ -29,5 +30,11 @@ public class Department
     public IEnumerable<Employee> GetEmployeesByRole(string role)
     {
         return Employees.Where(emp => emp.Role == role);
+    }
+
+    public void AddOptimalStaffing(string name)
+    {
+
+
     }
 } 

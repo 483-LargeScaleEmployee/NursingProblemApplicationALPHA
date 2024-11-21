@@ -12,8 +12,9 @@ public partial class DepartmentPopup : Popup
 
     private void Change_Department(object sender, EventArgs e)
     {
-        Close("IT CHANGED");
-        //Should open a popup with department list
+        //changes departmentname to the department chosen
+        Close(((Microsoft.Maui.Controls.Button)sender).Text);
+        
 
     }
 
