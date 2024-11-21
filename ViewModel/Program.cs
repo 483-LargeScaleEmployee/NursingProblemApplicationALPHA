@@ -1,9 +1,12 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Globalization;
 using System.Collections.Generic;
 using CsvHelper;
 using ViewModel.Tests;
+using CsvHelper.Configuration.Attributes;
+
+using NursingProblemApplicationALPHA;
 
 
 namespace ViewModel
@@ -12,21 +15,34 @@ namespace ViewModel
    {
 
 
-       public required string EID { get; set; }
+       public required string Name { get; set; }
        public required string Department { get; set; }
        public required string Role { get; set; }
        public required string Day { get; set; }
        public required string Shift { get; set; }
    }
 
+   public class DepartmentsCSV
+   {
+
+    [Name("Sprint Day")]
+    public required string Day { get; set; }
+       public required string Shift { get; set; }
+       public required int Nurse { get; set; }
+       public required int Doctor { get; set; }
+       public required int Admin { get; set; }
+   }
+
 
    public class Program
    {
        public static Dictionary<string, Employee> employees = new Dictionary<string, Employee>();
+       public static Dictionary<string, Department> departments { get; private set; }
+
        public static void Main(string[] args)
        {
            //Initialize departments
-            var departments = DepartmentInitializer.InitializeDepartments();
+            departments = DepartmentInitializer.InitializeDepartments();
            
            string filePath = "Model/employee_schedule.csv";
           
@@ -43,7 +59,7 @@ namespace ViewModel
 
                    foreach (var employee in records)
                    {
-                       string name = employee.EID;
+                       string name = employee.Name;
                        Department department = departments[employee.Department];
                        string role = employee.Role;
                        string day = employee.Day;
