@@ -44,4 +44,24 @@ public class Department
 
         return roles;
     }
+
+        // Add a single Employee to the department
+    public void addEmployee(Employee emp)
+    {
+        Employees.Add(emp);
+    }
+
+        // Remove a single Employee from department
+    public void deleteEmployee(Employee emp)
+    {
+        Employees.Remove(emp);
+    }
+
+    public void addMultipleEmployees(IEnumerable<Employee> employees)
+    {
+        foreach (Employee emp in Employees)
+        {
+            Employees.Add(emp);
+        }
+    }
 }

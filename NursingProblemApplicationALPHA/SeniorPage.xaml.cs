@@ -60,8 +60,22 @@ public partial class SeniorPage : ContentPage
         gridFilter1.BindingContext = this;
         gridFilter2.BindingContext = this;
 
-        
-            // Hide Role selection until Department selected
+        pickerFilter1.SetBinding(Picker.ItemsSourceProperty, "DepartmentList");
+        pickerFilter1.ItemDisplayBinding = new Binding("Name");
+
+        pickerFilter2.SetBinding(Picker.ItemsSourceProperty, "RoleList");
+
+        Dispatcher.DispatchAsync(async () =>
+        {
+            EmployeeList = await CSV_Parser.ParseCSVAsync();
+            EmployeeList = EmployeeList;
+            OnPropertyChanged(nameof(EmployeeList));
+
+        });
+
+
+
+        // Hide Role selection until Department selected
         gridFilter2.IsVisible = false;
         
 	}
@@ -94,15 +108,29 @@ public partial class SeniorPage : ContentPage
     {
             // Gather Employee List by Selected Role 
         String selectedRole = RoleList[pickerFilter2.SelectedIndex];
-        EmployeeList = DepartmentList[pickerFilter1.SelectedIndex].GetEmployeesByRole(selectedRole);
+        //EmployeeList = DepartmentList[pickerFilter1.SelectedIndex].GetEmployeesByRole(selectedRole);
 
-        mainViewModel.setCubeDepth(EmployeeList.Count);
+        foreach (Employee emp in EmployeeList)
+        {
+            foreach (Department dept in emp.Departments)
+            {
+                if ((emp.Role == selectedRole) && (dept.Name.Equals(DepartmentList[pickerFilter1.SelectedIndex].Name)))
+                {
+                    DepartmentList[pickerFilter1.SelectedIndex].addEmployee(emp);
+                }
+            }
+        }
+
+
+        mainViewModel.setCubeDepth(DepartmentList[pickerFilter1.SelectedIndex].Employees.Count);
     }
 
     private void pickerFilter1_SelectedIndexChanged(object sender, EventArgs e)
     {
+
+
             // Gather Roles scheduled for department
-        RoleList = DepartmentList[pickerFilter1.SelectedIndex].getAllRoles();
+        //RoleList = DepartmentList[pickerFilter1.SelectedIndex].getAllRoles();
         
             // Show role selection list
         gridFilter2.IsVisible = true;

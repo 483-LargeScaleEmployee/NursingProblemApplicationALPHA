@@ -1,11 +1,60 @@
 ﻿
-
+using CommunityToolkit.Maui.Storage;
+using System.Diagnostics;
+using System.Reflection;
+using System.Threading;
 
 namespace NursingProblemApplicationALPHA;
 
-
 public partial class MainPage : ContentPage
 {
+    //Makes an array that contains shift information (42)
+    private string[] _shiftInfo = new string[42];
+    public string[] shiftInfo
+    {
+        get => _shiftInfo;
+        set
+        {
+            _shiftInfo = value;
+            OnPropertyChanged(nameof(shiftInfo)); // Notify the UI that the property has changed
+        }
+    }
+
+    //Makes an array that contains department color info (42)
+    private Color[] _colorInfo = new Color[42];
+    public Color[] colorInfo
+    {
+        get => _colorInfo;
+        set
+        {
+            _colorInfo = value;
+            OnPropertyChanged(nameof(colorInfo)); // Notify the UI that the property has changed
+        }
+    }
+
+    //Makes an array that contains shift information (42)
+    private string _Name;
+    public string Name
+    {
+        get => _Name;
+        set
+        {
+            _Name = value;
+            OnPropertyChanged(nameof(Name)); // Notify the UI that the property has changed
+        }
+    }
+    //Makes an array that contains shift information (42)
+    private int _EID;
+    public int EID
+    {
+        get => _EID;
+        set
+        {
+            _EID = value;
+            OnPropertyChanged(nameof(EID)); // Notify the UI that the property has changed
+        }
+    }
+
     //Used for grid 1 Visablility
     private bool _gridOneBool = true;
     public bool GridOneBool
@@ -54,12 +103,14 @@ public partial class MainPage : ContentPage
         }
     }
 
-
     public MainPage()
     {
         InitializeComponent();
         BindingContext = this;  //Lets the XAML file access the property
+
     }
+
+    
 
     private void NextButton_Clicked(object sender, EventArgs e) //changes which week is in view for 1 week view mode
     {
@@ -98,28 +149,47 @@ public partial class MainPage : ContentPage
 
     private async void ImportFile_Clicked(object sender, EventArgs e) //Button that lets you import files
     {
-        var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+
+        //Prompts User with picking the input folder
+        var inputFolder = await FolderPicker.PickAsync(default);
+
+        if (inputFolder.IsSuccessful == false)
         {
-            {DevicePlatform.WinUI, new[] {".csv"}} //This should only let you import csv files
-		
-		});
-
-
-
-        var result = await FilePicker.PickAsync(new PickOptions
-        {
-            PickerTitle = "Import CSV",
-            FileTypes = customFileType
-        });
-
-        if (result == null)
-        {
-            return;
+            return; // Exit the method if the user canceled
         }
 
-        var stream = await result.OpenReadAsync();  //I dont know what this line does for sure, I think it reads the file
+        string inputFolderPath = inputFolder.Folder.Path;
+
+
+        //Sets the output folder so we always know where it is.
+        //Output located @ NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppX\Output
+        string outputFolderPath = "./Resources/Raw/output_schedule.csv";
+
+        if (!Directory.Exists(outputFolderPath))
+        {
+            //if there is no output directory, create a new one
+            Directory.CreateDirectory(outputFolderPath);
+        }
+
+        var processStartInfo = new ProcessStartInfo
+        {
+            //if new algo.exe is realsed, go to properties, then build action, then send to content
+            //Set copy output directory to copy if newer
+            //do this with both algo.exe & the .dll file that goes with it
+            FileName = Path.Combine(AppContext.BaseDirectory, "linear algebra release 29", "algo.exe"),
+            Arguments = $"\"{inputFolderPath}\" \"{outputFolderPath}\"",
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+        };
+
+        //Runs algorithm
+        using var process = new Process { StartInfo = processStartInfo };
+        process.Start();
+
+        //add something here that indicates that the program is loading, you can only tell by hovering your mouse over the top of the window right now
+        process.WaitForExit();
 
     }
-
-
 }

@@ -74,6 +74,10 @@
               "target": "Package",
               "version": "[9.1.0, )"
             },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -132,6 +136,10 @@
             "CommunityToolkit.Maui.Core": {
               "target": "Package",
               "version": "[9.1.0, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -192,6 +200,10 @@
               "target": "Package",
               "version": "[9.1.0, )"
             },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -251,6 +263,10 @@
             "CommunityToolkit.Maui.Core": {
               "target": "Package",
               "version": "[9.1.0, )"
+            },
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",

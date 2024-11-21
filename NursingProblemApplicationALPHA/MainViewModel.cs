@@ -28,7 +28,7 @@ public class MainViewModel : INotifyPropertyChanged
     private const int CUBE_Y = 3;  // Shifts
     //private int CUBE_Z = 10; // Users
     private const int POINTS_PER_USER = (CUBE_X + 1) * (CUBE_Y + 1);
-    private const double POINT_DIST = 30;
+    private const double POINT_DIST = 10;
 
     public event PropertyChangedEventHandler PropertyChanged;
 
@@ -41,6 +41,9 @@ public class MainViewModel : INotifyPropertyChanged
         {
             _cube_z = value;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CUBE_Z)));
+
+            CubePoints = makeCubePoints();
+            CubeFaces = makeCubeFaces(CubePoints);
         }
     }
 

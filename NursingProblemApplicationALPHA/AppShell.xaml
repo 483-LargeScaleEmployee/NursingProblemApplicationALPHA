@@ -24,6 +24,7 @@
         Title="Senior"
         ContentTemplate="{DataTemplate local:SeniorPage}"
         Route="SeniorPage" />
-  </TabBar>
+
+    </TabBar>
   
 </Shell>

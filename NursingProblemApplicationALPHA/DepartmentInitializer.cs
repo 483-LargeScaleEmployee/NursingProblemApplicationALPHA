@@ -19,7 +19,7 @@ namespace NursingProblemApplicationALPHA
                 "Oncology",
                 "Emergency",
                 "Cardiology",
-                "Intensive Care Unit",
+                "ICU", // Was "Intensive Care Unit"
                 "Psychiatry",
                 "Gynecology",
                 "Orthopedics"

@@ -1,0 +1,5 @@
+Open terminal and change directory to this folder:
+cd C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\linear algebra release 29
+
+Type algo.exe input output:
+this tells it to run algo.exe, take input directory input, and output the results to the output folder

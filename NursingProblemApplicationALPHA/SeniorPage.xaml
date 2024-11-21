@@ -88,8 +88,6 @@
                 x:Name="pickerFilter1" 
                 Grid.Row="1"
                 HorizontalTextAlignment="Center"
-                ItemsSource="{Binding DepartmentList}"
-                ItemDisplayBinding="{Binding Name}"
                 SelectedIndexChanged="pickerFilter1_SelectedIndexChanged"   
             />
         </Grid>
@@ -115,7 +113,6 @@
                 x:Name="pickerFilter2" 
                 Grid.Row="1"
                 HorizontalTextAlignment="Center"
-                ItemsSource="{Binding RoleList}"
                 SelectedIndexChanged="pickerFilter2_SelectedIndexChanged"
             />
 
@@ -161,6 +158,8 @@
                 <RowDefinition Height="1*" />  <!--  -->
             </Grid.RowDefinitions>
 
+            <!--
+            
             <ListView
                 x:Name="listViewEmployeeList"
                 Grid.Row="1" 
@@ -174,7 +173,8 @@
                 
                 
             </ListView>
-
+            
+            -->
         </Grid>
     </Grid>
     
