@@ -18,7 +18,7 @@ namespace ViewModel
             "Oncology",
             "Emergency",
             "Cardiology",
-            "Intensive Care Unit",
+            "ICU",
             "Psychiatry",
             "Gynecology",
             "Orthopedics"

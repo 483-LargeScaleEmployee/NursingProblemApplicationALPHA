@@ -1,10 +1,35 @@
 using CommunityToolkit.Maui.Views;
+using ViewModel;
 
 namespace NursingProblemApplicationALPHA;
 
 public partial class UpperManagementPage : ContentPage
 {
-	//Used for grid 1 Visablility
+    //Makes an array that contains shift information (42)
+    private string[] _shiftInfo = new string[42];
+    public string[] shiftInfo
+    {
+        get => _shiftInfo;
+        set
+        {
+            _shiftInfo = value;
+            OnPropertyChanged(nameof(shiftInfo)); // Notify the UI that the property has changed
+        }
+    }
+
+    //Makes an array that contains department color info (42)
+    private Color[] _colorInfo = new Color[42];
+    public Color[] colorInfo
+    {
+        get => _colorInfo;
+        set
+        {
+            _colorInfo = value;
+            OnPropertyChanged(nameof(colorInfo)); // Notify the UI that the property has changed
+        }
+    }
+
+    //Used for grid 1 Visablility
     private bool _gridOneBool = true;
     public bool GridOneBool
     {
@@ -54,23 +79,31 @@ public partial class UpperManagementPage : ContentPage
     }
 
     //change department in title
-    private string _department = "NONE";
-    public string department
+    private string _departmentName = "NONE";
+    public string departmentName
     {
-        get => _department;
+        get => _departmentName;
         set
         {
-            _department = value;
-            OnPropertyChanged(nameof(department)); // Notify the UI that the property has changed
+            _departmentName = value;
+            OnPropertyChanged(nameof(departmentName)); // Notify the UI that the property has changed
         }
     }
 
+    //department information is saved into this for easier access
+    public static dynamic departments = DepartmentInitializer.InitializeDepartments();
+    int testbreakpoint;
 
     public UpperManagementPage()
 	{
 		InitializeComponent();
         BindingContext = this;  //Lets the XAML file access the property
-	}
+
+        departments = Program.departments;  //this works you dont need to recall csvReader
+        testbreakpoint++;
+
+        
+    }
 
     private void NextButton_Clicked(object sender, EventArgs e) //changes which week is in view for 1 week view mode
     {
@@ -105,34 +138,9 @@ public partial class UpperManagementPage : ContentPage
 
         if (result is string departmentName)
         {
-            department = departmentName;    //Changes Department title
-            _department = department;
+            departmentName = departmentName;    //Changes Department title
+            _departmentName = departmentName;
         }
-    }
-
-
-    private async void ImportFile_Clicked(object sender, EventArgs e) //Button that lets you import files
-    {
-		var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-		{
-			{DevicePlatform.WinUI, new[] {".csv"}} //This should only let you import csv files
-		
-		});
-
-
-
-		var result = await FilePicker.PickAsync(new PickOptions
-		{
-			PickerTitle = "Import CSV",
-			FileTypes = customFileType
-		});
-
-		if (result == null){
-			return;
-		}
-
-		var stream = await result.OpenReadAsync();  //I dont know what this line does for sure, I think it reads the file
-
     }
 
 }

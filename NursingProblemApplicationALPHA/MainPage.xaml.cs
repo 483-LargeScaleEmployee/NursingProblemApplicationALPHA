@@ -48,15 +48,15 @@ public partial class MainPage : ContentPage
         }
     }
 
-    //sends EID to the UI
-    private int _EID;
-    public int EID
+    //sends Role to the UI
+    private string _Role;
+    public string Role
     {
-        get => _EID;
+        get => _Role;
         set
         {
-            _EID = value;
-            OnPropertyChanged(nameof(EID)); // Notify the UI that the property has changed
+            _Role = value;
+            OnPropertyChanged(nameof(Role)); // Notify the UI that the property has changed
         }
     }
 
@@ -114,8 +114,9 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = this;  //Lets the XAML file access the property
+        Program.ProgramMain();  //Runs through the csv on boot, check if this errors w/o csv
 
-        employees = Program.ProgramMain();
+        employees = Program.employees;
         testbreakpoint++;
 
         //Make a thing that sets a random employee as the current schedule on launch
@@ -174,6 +175,7 @@ public partial class MainPage : ContentPage
 
         //sets name to user input
         Name = employees[userInput].Name;
+        Role = employees[userInput].Role;
         var schedule = employees[userInput].Schedule;
         int count = 0;
 
@@ -202,6 +204,16 @@ public partial class MainPage : ContentPage
         OnPropertyChanged(nameof(shiftInfo));  //updates so that the shifts change
 
     }
+
+    private void Random_Employee(object sender, EventArgs e)
+    {
+        Random random = new Random();
+        var randomEmployeeKey = employees.Keys.ElementAt(random.Next(employees.Count));
+
+        entry.Text = randomEmployeeKey;
+        OnEntryCompleted(sender, e);
+    }
+
 
     private async void ImportFile_Clicked(object sender, EventArgs e) //Button that lets you import files
     {
@@ -249,9 +261,11 @@ public partial class MainPage : ContentPage
         //add something that tells the user if the algorithm didn't run for whatever reason
         process.WaitForExit();
 
-        //runs the output and updates employees
-        employees = Program.ProgramMain();
+        //runs the output
+        Program.ProgramMain();
+        employees = Program.employees;
 
     }
+
 }
 

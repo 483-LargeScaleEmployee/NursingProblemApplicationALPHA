@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Collections.Generic;
 using CsvHelper;
 
-
 namespace ViewModel
 {
    public class EmployeeCSV
@@ -22,10 +21,12 @@ namespace ViewModel
    public class Program
    {
        public static Dictionary<string, Employee> employees = new Dictionary<string, Employee>();
-       public static Dictionary<string, Employee> ProgramMain()
+
+       public static dynamic departments = DepartmentInitializer.InitializeDepartments();
+        public static void ProgramMain()
        {
            //Initialize departments
-            var departments = DepartmentInitializer.InitializeDepartments();
+            //var departments = DepartmentInitializer.InitializeDepartments();
 
             //Sets the location for where the output csv is located
             string outputFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication", "Output", "schedule.csv");
@@ -59,7 +60,7 @@ namespace ViewModel
                            employees[name].UpdateEmployee(department, day, shift);
 
 
-                           Console.WriteLine($"Updated {name} employee schedule ");
+                           //Console.WriteLine($"Updated {name} employee schedule ");
                        }
                        else
                        {
@@ -70,7 +71,7 @@ namespace ViewModel
 
 
                    }
-                   Console.WriteLine(employees);
+                   //Console.WriteLine(employees);
                   
                }
            }
@@ -78,8 +79,6 @@ namespace ViewModel
            {
                Console.WriteLine($"Error: {ex.Message}");
            }
-
-            return employees;
 
             // Run the tests
             //EmployeeTests.RunTests(employees);

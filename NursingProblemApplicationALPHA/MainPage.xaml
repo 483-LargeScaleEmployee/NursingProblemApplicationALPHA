@@ -16,10 +16,10 @@
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Spacing="5"><!--Controls spacing between Employee ID: & "{Binding EID}"-->
                     <Label
-                        Text="Employee ID: "/>
+                        Text="Employee Role: "/>
 
                     <Label
-                        Text="{Binding EID}"/>
+                        Text="{Binding Role}"/>
                 </HorizontalStackLayout>
 
             </HorizontalStackLayout>
@@ -196,6 +196,15 @@
                        PlaceholderColor="DarkSlateGray"
                        Completed="OnEntryCompleted" />
                 </Border>
+
+                <Button
+                    Text ="Random Employee"
+                    BackgroundColor ="LightBlue"
+                    BorderWidth ="2"
+                    BorderColor ="Black"
+                    TextColor ="Black"
+                    Clicked="Random_Employee"
+                    ToolTipProperties.Text="Clickable"/>
 
             </HorizontalStackLayout> 
         </VerticalStackLayout>
