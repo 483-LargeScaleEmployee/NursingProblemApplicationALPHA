@@ -40,15 +40,15 @@ namespace ViewModel
         };
 
 
-        //There is currently nothing that prevents departments from sharing the same color, need to fix
-        foreach (var departmentName in departmentNames)
+        //Sets colors for departments
+        for (int i = 0; i < departmentNames.Count; i++)
         {
-            var randomColor = colors[new Random().Next(colors.Count)];
-            departments.Add(departmentName, new Department(departmentName, randomColor));
+            //departments.Add(departmentName[, new Department(departmentName, randomColor)]);
+            departments.Add(departmentNames[i], new Department(departmentNames[i], colors[i]));
         }
-        
 
-        return departments;
+
+            return departments;
     }
     }
 }

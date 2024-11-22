@@ -73,7 +73,7 @@ public class Department
         string inputLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication", "inputLocation.txt");
 
         //read the single line of the text document to get the actual filepath
-
+        
         //departments should be the name of the folder inside here with all the staffing requirenemnts
         //just add the three roles together and populate the OptimalStaffing from 0-41 in the dict
 
