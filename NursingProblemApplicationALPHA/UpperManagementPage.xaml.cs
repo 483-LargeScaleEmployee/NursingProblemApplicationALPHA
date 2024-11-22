@@ -133,57 +133,63 @@ public partial class UpperManagementPage : ContentPage
     }
     private async void Change_Department(object sender, EventArgs e)	//Opens departmentPopup
     {
-        var result = await this.ShowPopupAsync(new DepartmentPopup());
-        //Should open a popup with department list
-        
-        if (result == null)
+        try
         {
-            return;  //prevents crash from not choosing department
-        }
+            var result = await this.ShowPopupAsync(new DepartmentPopup());
+            //Should open a popup with department list
 
-        if (result is string departmentName)
-        {
-            _departmentName = departmentName;
-            OnPropertyChanged(nameof(departmentName));
-        }
-
-        //now make it so it populates shiftinfo with how many people are in the department
-        //then populate shiftcolor for whether its over, under or equal to the required amount
-
-        var schedule = departments[_departmentName].Schedule;
-        //var OptimalStaffing = departments[_departmentName].OptimalStaffing;
-        int count = 0;
-
-        foreach (var item in schedule)
-        {
-            int scheduleBlock = item.Key;
-            var department = item.Value;
-
-            shiftInfo[count] = department.Count;
-
-            /* uncomment when optimalstaffing is implemented in department
-            var optimalStaff = OptimalStaffing[count];
-
-            //sets color depending on staffAmount
-            if (department.Count < optimalStaff) //not enough scheduled
+            if (result == null)
             {
-                colorInfo[count] = Colors.Red;
+                return;  //prevents crash from not choosing department
             }
-            else if(department.Count > optimalStaff) //too many scheduled
-            {
-                colorInfo[count] = Colors.Yellow;
-            }
-            else //optimal scheduled
-            {
-                colorInfo[count] = Colors.Green;
-            }*/
 
-            count++;
+            if (result is string departmentName)
+            {
+                _departmentName = departmentName;
+                OnPropertyChanged(nameof(departmentName));
+            }
+
+            //now make it so it populates shiftinfo with how many people are in the department
+            //then populate shiftcolor for whether its over, under or equal to the required amount
+
+            var schedule = departments[_departmentName].Schedule;
+            var OptimalStaffing = departments[_departmentName].OptimalStaffing;
+            int count = 0;
+
+            foreach (var item in schedule)
+            {
+                int scheduleBlock = item.Key;
+                var department = item.Value;
+
+                shiftInfo[count] = department.Count;
+
+                var optimalStaff = OptimalStaffing[count];
+
+                //sets color depending on staffAmount
+                if (department.Count < optimalStaff) //not enough scheduled
+                {
+                    colorInfo[count] = Colors.Red;
+                }
+                else if (department.Count > optimalStaff) //too many scheduled
+                {
+                    colorInfo[count] = Colors.Yellow;
+                }
+                else //optimal scheduled
+                {
+                    colorInfo[count] = Colors.Green;
+                }
+
+                count++;
+
+            }
+
+            colorInfo = _colorInfo; //needs to be here for color to work
+            OnPropertyChanged(nameof(shiftInfo));  //updates so that the shifts change
+        }
+        catch (Exception ex)
+        {
 
         }
-
-        colorInfo = _colorInfo; //needs to be here for color to work
-        OnPropertyChanged(nameof(shiftInfo));  //updates so that the shifts change
 
     }
 

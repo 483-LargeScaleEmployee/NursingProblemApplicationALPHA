@@ -1,3 +1,4 @@
+using CsvHelper.Expressions;
 using System;
 using System.Collections.Generic;
 
@@ -18,13 +19,18 @@ public class Department
         Employees = new HashSet<Employee>();
         Schedule = Enumerable.Range(1, 42)
             .ToDictionary(i => i, _ => new HashSet<Employee>());
-        AddOptimalStaffing(name);
+        OptimalStaffing = new Dictionary<int, int>();
+
+    }
+    public void SetOptimalStaffing(int shiftNumber, int staffCount)
+    {
+        OptimalStaffing[shiftNumber] = staffCount;
     }
 
     public void AddEmployeeToShift(Employee employee, int shiftNumber)
     {
         Schedule[shiftNumber].Add(employee);
-        
+      
     }
 
 
@@ -67,17 +73,4 @@ public class Department
         }
     }
 
-    public void AddOptimalStaffing(string name)
-    {
-        //locates the input location where the departments folder is
-        string inputLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication", "inputLocation.txt");
-
-        //read the single line of the text document to get the actual filepath
-        
-        //departments should be the name of the folder inside here with all the staffing requirenemnts
-        //just add the three roles together and populate the OptimalStaffing from 0-41 in the dict
-
-
-
-    }
 } 
