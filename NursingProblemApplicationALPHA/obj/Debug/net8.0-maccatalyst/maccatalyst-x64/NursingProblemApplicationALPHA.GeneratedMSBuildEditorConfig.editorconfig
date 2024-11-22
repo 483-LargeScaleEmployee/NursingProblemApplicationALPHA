@@ -12,53 +12,53 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NursingProblemApplicationALPHA
-build_property.ProjectDir = C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\
+build_property.ProjectDir = C:\Users\Eric\source\repos\483-LargeScaleEmployee\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/App.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/AppShell.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/DepartmentPopup.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/DepartmentPopup.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.DepartmentPopup.xaml
 build_metadata.AdditionalFiles.TargetPath = DepartmentPopup.xaml
 build_metadata.AdditionalFiles.RelativePath = DepartmentPopup.xaml
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/MainPage.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/Resources/Styles/Colors.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/Resources/Styles/Styles.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/SeniorPage.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/SeniorPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.SeniorPage.xaml
 build_metadata.AdditionalFiles.TargetPath = SeniorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = SeniorPage.xaml
 
-[C:/Users/brend/Desktop/Programs/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/UpperManagementPage.xaml]
+[C:/Users/Eric/source/repos/483-LargeScaleEmployee/NursingProblemApplicationALPHA/NursingProblemApplicationALPHA/UpperManagementPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = NursingProblemApplicationALPHA.UpperManagementPage.xaml
 build_metadata.AdditionalFiles.TargetPath = UpperManagementPage.xaml

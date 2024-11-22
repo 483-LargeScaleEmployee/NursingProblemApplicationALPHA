@@ -1,13 +1,10 @@
 ﻿
 using CommunityToolkit.Maui.Storage;
 using Microsoft.Maui.Storage;
-using Microsoft.UI.Xaml;
 using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
 using ViewModel;
-using Windows.Gaming.Input.ForceFeedback;
-using Windows.Media.AppBroadcasting;
 
 namespace NursingProblemApplicationALPHA;
 

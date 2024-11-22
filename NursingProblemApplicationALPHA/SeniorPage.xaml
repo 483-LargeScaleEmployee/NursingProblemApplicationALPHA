@@ -13,8 +13,17 @@
     <Grid x:Name="gridSeniorPage">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="4*" />
-            <RowDefinition Height="4*" />
+
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -24,48 +33,194 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        
-        <local:Shape3D
+
+        <Label x:Name="labelEmployeeList"
+               Grid.Row="0"
+               Grid.Column="0"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               TextDecorations="Underline"
+               Text="Employee List" />
+
+        <Grid Grid.Row="1" Grid.RowSpan="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <ListView
+                x:Name="listEmployees" 
+                ItemsSource="{Binding EmployeesByRole}" 
+                SelectionMode="Single"
+                ItemSelected="listEmployees_ItemSelected" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+
+        <ScrollView 
+            Orientation="Horizontal"
             Grid.Row="1"
             Grid.Column="1"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            WidthRequest="700"
-            HeightRequest="400"
-            Points="{Binding CubePoints}"
-            Faces="{Binding CubeFaces}"
-            Transform="{Binding CubeTransform}"
-            Mode="{Binding Mode}" />
+            Grid.RowSpan="8"
+            Grid.ColumnSpan="4">
+            <HorizontalStackLayout>
+                <!--Time Labels-->
+                <AbsoluteLayout>
+                    <!--x, y, width, height-->
+                    <Label
+                            Text="12 AM"
+                            AbsoluteLayout.LayoutBounds="0, 60"/>
 
-        <Button
-            Grid.Row="3"
-            Grid.Column="2"
-            Grid.ColumnSpan="1"
-            HorizontalOptions="Center"
-            Text="Toggle Render Mode"
-            Command="{Binding ToggleRenderModeCommand}" />
+                    <Label
+                            Text="8 AM"
+                            AbsoluteLayout.LayoutBounds="8, 175"/>
+                    <!--8 nudge so AM & PM line up-->
 
-        <Button
-            x:Name="buttonRotateRight"
-            Grid.Row="3"
-            Grid.Column="4"
-            Text="Rotate Right"
-            Pressed="buttonRotateRight_Pressed"
-            Released="buttonRotateRight_Released" />
+                    <Label
+                            Text="4 PM"
+                            AbsoluteLayout.LayoutBounds="8, 300"/>
 
-        <Button
-            x:Name="buttonRotateLeft"
-            Grid.Row="3"
-            Grid.Column="0"
-            Text="Rotate Left"
-            Pressed="buttonRotateLeft_Pressed" 
-            Released="buttonRotateLeft_Released" />
-        
-        <Label
-            x:Name="labelPointArraySize"
-            Grid.Row="0"
-            Grid.Column="4"
-            Text="{Binding PointArraySize}" />
+                    <Label
+                            Text="12 AM"
+                            AbsoluteLayout.LayoutBounds="0, 415"/>
+                </AbsoluteLayout>
+
+                <!--Creates Week 1 Grid View-->
+                <Grid x:Name="gridWeek1View" Padding="10" IsVisible="true">
+                    <!--Creates 3 Rows & 7 Columns-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="125"/>
+                        <RowDefinition Height="125"/>
+                        <RowDefinition Height="125"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--This block of buttons is for the Mon-Sun labels, buttons only need to work on the upper management screen-->
+                    <Button Text="Monday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Tuesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Wednesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Thursday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Friday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Saturday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Sunday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+
+                    <!--Makes all the buttons & makes them white to use the grid bg as a border-->
+                    <!--Eventually Replace the Button text with data from shifts and button color with shift color-->
+                    <!--I think for button text to be readable we should pick shift colors that work well with black-->
+
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="{Binding ColorInfo[0]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="{Binding ColorInfo[1]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="{Binding ColorInfo[2]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="{Binding ColorInfo[3]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="{Binding ColorInfo[4]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="{Binding ColorInfo[5]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="{Binding ColorInfo[6]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="{Binding ColorInfo[7]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="{Binding ColorInfo[8]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="{Binding ColorInfo[9]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="{Binding ColorInfo[10]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="{Binding ColorInfo[11]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="{Binding ColorInfo[12]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="{Binding ColorInfo[13]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="{Binding ColorInfo[14]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="{Binding ColorInfo[15]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="{Binding ColorInfo[16]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="{Binding ColorInfo[17]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="{Binding ColorInfo[18]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="{Binding ColorInfo[19]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="{Binding ColorInfo[20]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+
+
+                </Grid>
+
+                <!--Creates Week 2 Grid View-->
+                <Grid x:Name="gridWeek2View" Padding="10" IsVisible="true">
+                    <!--Creates 3 Rows & 7 Columns-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="125"/>
+                        <RowDefinition Height="125"/>
+                        <RowDefinition Height="125"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="125"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Day Buttons-->
+                    <Button Text="Monday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Tuesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Wednesday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Thursday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Friday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Saturday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                    <Button Text="Sunday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+
+                    <!--Schedule Buttons-->
+
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="{Binding ColorInfo[21]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="{Binding ColorInfo[22]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="{Binding ColorInfo[23]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="{Binding ColorInfo[24]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="{Binding ColorInfo[25]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="{Binding ColorInfo[26]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="{Binding ColorInfo[27]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="{Binding ColorInfo[28]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="{Binding ColorInfo[29]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="{Binding ColorInfo[30]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="{Binding ColorInfo[31]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="{Binding ColorInfo[32]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="{Binding ColorInfo[33]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="{Binding ColorInfo[34]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="{Binding ColorInfo[35]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="{Binding ColorInfo[36]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="{Binding ColorInfo[37]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="{Binding ColorInfo[38]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="{Binding ColorInfo[39]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="{Binding ColorInfo[40]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                    <Button  LineBreakMode="WordWrap"  CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="{Binding ColorInfo[41]}" TextColor="Black" BorderColor="Black" BorderWidth="3" />
+                </Grid>
+
+                <AbsoluteLayout>
+                    <!--x, y, width, height-->
+                    <Label
+                        Text="12 AM"
+                        AbsoluteLayout.LayoutBounds="0, 60"/>
+
+                    <Label
+                        Text="8 AM"
+                        AbsoluteLayout.LayoutBounds="8, 175"/>
+                    <!--8 nudge so AM & PM line up-->
+
+                    <Label
+                        Text="4 PM"
+                        AbsoluteLayout.LayoutBounds="8, 300"/>
+
+                    <Label
+                        Text="12 AM"
+                        AbsoluteLayout.LayoutBounds="0, 415"/>
+                </AbsoluteLayout>
+
+            </HorizontalStackLayout>
+        </ScrollView>
 
         <Grid
             x:Name="gridFilter1"
@@ -73,8 +228,10 @@
             Grid.Column="1" >
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" /> <!-- Label: Filter1 -->
-                <RowDefinition Height="*" /> <!-- Picker: Filter1 -->
+                <RowDefinition Height="*" />
+                <!-- Label: Filter1 -->
+                <RowDefinition Height="*" />
+                <!-- Picker: Filter1 -->
             </Grid.RowDefinitions>
 
             <Label
@@ -82,8 +239,9 @@
                 Grid.Row="0"
                 Text="Department"
                 HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
             />
-            
+
             <Picker 
                 x:Name="pickerFilter1" 
                 Grid.Row="1"
@@ -98,8 +256,10 @@
             Grid.Column="3" >
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" /> <!-- Label: Filter2 -->
-                <RowDefinition Height="*" /> <!-- Picker: Filter2 -->
+                <RowDefinition Height="*" />
+                <!-- Label: Filter2 -->
+                <RowDefinition Height="*" />
+                <!-- Picker: Filter2 -->
             </Grid.RowDefinitions>
 
             <Label
@@ -107,6 +267,7 @@
                 Grid.Row="0"
                 Text="Role"
                 HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
             />
 
             <Picker 
@@ -117,33 +278,35 @@
             />
 
         </Grid>
-        
+
         <Grid x:Name="gridUserSelect"
               Grid.Row="0"
               Grid.Column="2" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" /> <!-- Button: UserBack -->
-                <ColumnDefinition Width="2*" /> <!-- Label: CurrentUser -->
-                <ColumnDefinition Width="1*" /> <!-- Button: UserFwd -->
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <!-- Button: UserBack -->
+                <RowDefinition Height="1*" />
+                <!-- Label: CurrentUser -->
+                <RowDefinition Height="1*" />
+                <!-- Button: UserFwd -->
+            </Grid.RowDefinitions>
 
-            <Button
-                x:Name="buttonUserBack" 
-                Grid.Column="0" 
-                FontSize="18"
-                Text="-"
-                Clicked="buttonUserBack_Clicked" />
-
+            <Label 
+                Text="Selected Employee"
+                HorizontalOptions="Center"
+                Grid.Row="0"/>
             <Label
                 x:Name="labelCurrentUser"
-                Grid.Column="1" />
+                HorizontalOptions="Center"
+                Text="{Binding SelectedEmployee.Name}"
+                Grid.Row="1" />
 
-            <Button
-                x:Name="buttonUserFwd" 
-                Grid.Column="2"
-                FontSize="18"
-                Text="+"
-                Clicked="buttonUserFwd_Clicked" />
+            <Label  
+                x:Name="labelSelectedUserRole"
+                HorizontalOptions="Center"
+                Text="{Binding SelectedEmployee.Role}"
+                Grid.Row="2" />
+
         </Grid>
 
         <Grid
@@ -153,29 +316,73 @@
             Grid.RowSpan="2" >
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />  <!--  -->
-                <RowDefinition Height="3*" />  <!-- ScrollView: EmployeeList -->
-                <RowDefinition Height="1*" />  <!--  -->
+                <RowDefinition Height="1*" />
+                <!--  -->
+                <RowDefinition Height="3*" />
+                <!-- ScrollView: EmployeeList -->
+                <RowDefinition Height="1*" />
+                <!--  -->
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <Grid Grid.Row="9" 
+              Grid.Column="1"
+              Grid.ColumnSpan="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!--
-            
-            <ListView
-                x:Name="listViewEmployeeList"
-                Grid.Row="1" 
-                ItemsSource="{Binding EmployeeList}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell
-                            Text="{Binding Name}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                
-                
-            </ListView>
-            
-            -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="6*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0"
+                       Grid.Column="0"
+                       Fill="Green" />
+
+            <Rectangle Grid.Row="1"
+                       Grid.Column="0"
+                       Fill="LightGreen" />
+
+            <Rectangle Grid.Row="0"
+                       Grid.Column="2"
+                       Fill="Blue" />
+
+            <Rectangle Grid.Row="1"
+                       Grid.Column="2"
+                       Fill="SkyBlue" />
+
+            <Rectangle Grid.Row="2"
+                       Grid.Column="0"
+                       Fill="Gray" />
+
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                   Text="Same Department &amp; Same Role" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Text="Same Department &amp; Different Role" />
+
+            <Label Grid.Row="0"
+                   Grid.Column="3"
+                   Text="Different Department &amp; Same Role" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="3"
+                   Text="Different Department &amp; Different Role" />
+
+            <Label Grid.Row="2"
+                   Grid.Column="1"
+                   Text="Not Scheduled" />
+
         </Grid>
+
     </Grid>
-    
+
 </ContentPage>

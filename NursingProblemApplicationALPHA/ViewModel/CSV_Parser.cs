@@ -87,57 +87,6 @@ namespace ViewModel
 
             return employees.Values.ToList<Employee>();
         }
-
-        public static async Task<IList<Employee>> ParseCSVOldAsync()
-        {
-            //Initialize departments
-            Dictionary<String, Department> departments = DepartmentInitializer.InitializeDepartments();
-
-            //Sets the location for where the output csv is located
-            //string outputFolderPath = Path.Combine(FileSystem.Current.AppDataDirectory, "employee_schedule.csv");
-            //string filePath = outputFolderPath;
-
-
-                
-            using (var reader = new StreamReader(await FileSystem.Current.OpenAppPackageFileAsync("employee_schedule.csv")))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-            {
-                var records = csv.GetRecords<EmployeeCSV>();
-
-                    
-                foreach (var employee in records)
-                {
-                    string name = employee.EmployeeName;
-                    Department department = departments[employee.Department];
-                    string role = employee.Role;
-                    string day = employee.Days;
-                    string shift = employee.Shifts;
-
-
-                    if (employees.ContainsKey(name))
-                    {
-                        // Update existing employee
-                        employees[name].UpdateEmployee(department, day, shift);
-
-
-                        Console.WriteLine($"Updated {name} employee schedule ");
-                    }
-                    else
-                    {
-                        // Create new employee
-                        employees[name] = new Employee(name, department, role, day, shift);
-
-                    }
-
-
-                }
-                Console.WriteLine(employees);
-
-                }
-        
-            return employees.Values.ToList();
-
-        }
     }
 }
 
