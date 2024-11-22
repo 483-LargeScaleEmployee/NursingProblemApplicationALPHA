@@ -237,6 +237,11 @@ public partial class MainPage : ContentPage
 
         string inputFolderPath = inputFolder.Folder.Path;
 
+        //saves input directory to be referenced later
+        using (StreamWriter outputFile = new StreamWriter(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication", "inputLocation.txt")))
+        {
+            outputFile.WriteLine(inputFolderPath);
+        }
 
         //Sets the output folder so we always know where it is.
         //Output located @ MyDoccuments/NursingProblemApplication/Output

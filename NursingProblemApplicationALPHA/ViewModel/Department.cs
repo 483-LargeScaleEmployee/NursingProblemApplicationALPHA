@@ -69,6 +69,12 @@ public class Department
 
     public void AddOptimalStaffing(string name)
     {
+        //locates the input location where the departments folder is
+        string inputLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication", "inputLocation.txt");
+
+        //departments should be the name of the folder inside here with all the staffing requirenemnts
+        //just add the three roles together and populate the OptimalStaffing from 0-41 in the dict
+
 
 
     }
