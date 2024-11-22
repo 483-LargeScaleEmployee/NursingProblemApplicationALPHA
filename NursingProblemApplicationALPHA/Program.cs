@@ -21,8 +21,8 @@ namespace ViewModel
    public class Program
    {
        public static Dictionary<string, Employee> employees = new Dictionary<string, Employee>();
-
        public static dynamic departments = DepartmentInitializer.InitializeDepartments();
+
         public static void ProgramMain()
        {
            //Initialize departments
@@ -39,12 +39,6 @@ namespace ViewModel
                {
                    var records = csv.GetRecords<EmployeeCSV>().ToList();
 
-                    // Console.WriteLine("------------------------");
-                    // Console.WriteLine(employees);
-
-
-                    //This doesn't read everything in records and I dont know why
-                    //I'm moving to work on mapping it to main page cause we do have at least 4 complete schedules
                    foreach (var employee in records)
                    {
                        string name = employee.EmployeeName;

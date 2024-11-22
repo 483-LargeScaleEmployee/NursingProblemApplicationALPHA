@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[9.1.0, )"
             },
+            "CommunityToolkit.Maui.Core": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
             "CsvHelper": {
               "target": "Package",
               "version": "[33.0.1, )"
@@ -91,6 +95,14 @@
               "target": "Package",
               "version": "[8.0.10, )",
               "autoReferenced": true
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Runtime.Numerics": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -121,6 +133,10 @@
               "target": "Package",
               "version": "[9.1.0, )"
             },
+            "CommunityToolkit.Maui.Core": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
             "CsvHelper": {
               "target": "Package",
               "version": "[33.0.1, )"
@@ -142,6 +158,14 @@
               "target": "Package",
               "version": "[8.0.10, )",
               "autoReferenced": true
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Runtime.Numerics": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -172,6 +196,10 @@
               "target": "Package",
               "version": "[9.1.0, )"
             },
+            "CommunityToolkit.Maui.Core": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
             "CsvHelper": {
               "target": "Package",
               "version": "[33.0.1, )"
@@ -193,6 +221,14 @@
               "target": "Package",
               "version": "[8.0.10, )",
               "autoReferenced": true
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Runtime.Numerics": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -224,6 +260,10 @@
               "target": "Package",
               "version": "[9.1.0, )"
             },
+            "CommunityToolkit.Maui.Core": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
             "CsvHelper": {
               "target": "Package",
               "version": "[33.0.1, )"
@@ -239,6 +279,14 @@
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
               "version": "[8.0.82, )"
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Runtime.Numerics": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

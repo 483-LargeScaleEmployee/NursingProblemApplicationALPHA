@@ -27,9 +27,44 @@ public class Department
         
     }
 
-    public IEnumerable<Employee> GetEmployeesByRole(string role)
+
+    public IList<Employee> GetEmployeesByRole(string role)
     {
-        return Employees.Where(emp => emp.Role == role);
+        return Employees.Where(emp => emp.Role == role).ToList();
+    }
+
+    public IList<String> getAllRoles()
+    {
+        IList<String> roles = new List<String>();
+        foreach (Employee emp in Employees)
+        {
+            if (!roles.Contains(emp.Role))
+            {
+                roles.Add(emp.Role);
+            }
+        }
+
+        return roles;
+    }
+
+    // Add a single Employee to the department
+    public void addEmployee(Employee emp)
+    {
+        Employees.Add(emp);
+    }
+
+    // Remove a single Employee from department
+    public void deleteEmployee(Employee emp)
+    {
+        Employees.Remove(emp);
+    }
+
+    public void addMultipleEmployees(IEnumerable<Employee> employees)
+    {
+        foreach (Employee emp in Employees)
+        {
+            Employees.Add(emp);
+        }
     }
 
     public void AddOptimalStaffing(string name)

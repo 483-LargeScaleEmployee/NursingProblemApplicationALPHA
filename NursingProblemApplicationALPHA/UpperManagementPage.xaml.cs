@@ -99,7 +99,7 @@ public partial class UpperManagementPage : ContentPage
 		InitializeComponent();
         BindingContext = this;  //Lets the XAML file access the property
 
-        departments = Program.departments;  //this works you dont need to recall csvReader
+        departments = CSV_Parser.departments;  //this works you dont need to recall csvReader
         testbreakpoint++;
 
         
@@ -151,7 +151,7 @@ public partial class UpperManagementPage : ContentPage
         //then populate shiftcolor for whether its over, under or equal to the required amount
 
         var schedule = departments[_departmentName].Schedule;
-        var OptimalStaffing = departments[_departmentName].OptimalStaffing;
+        //var OptimalStaffing = departments[_departmentName].OptimalStaffing;
         int count = 0;
 
         foreach (var item in schedule)
@@ -161,7 +161,7 @@ public partial class UpperManagementPage : ContentPage
 
             shiftInfo[count] = department.Count;
 
-
+            /* uncomment when optimalstaffing is implemented in department
             var optimalStaff = OptimalStaffing[count];
 
             //sets color depending on staffAmount
@@ -176,7 +176,7 @@ public partial class UpperManagementPage : ContentPage
             else //optimal scheduled
             {
                 colorInfo[count] = Colors.Green;
-            }
+            }*/
 
             count++;
 

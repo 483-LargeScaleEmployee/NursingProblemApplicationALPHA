@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-11-21T04:19:44.426</Modified>
+      <Modified>2024-11-22T13:21:45.564</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-11-20T20:58:37.954</Modified>
+      <Modified>2024-11-22T13:08:57.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.runtimeconfig.json">
       <PackagePath>NursingProblemApplicationALPHA.runtimeconfig.json</PackagePath>
-      <Modified>2024-11-19T05:53:55.617</Modified>
+      <Modified>2024-11-22T12:19:21.887</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.dll">
       <PackagePath>NursingProblemApplicationALPHA.dll</PackagePath>
-      <Modified>2024-11-21T04:19:43.823</Modified>
+      <Modified>2024-11-22T13:21:44.763</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>NursingProblemApplicationALPHA.exe</PackagePath>
-      <Modified>2024-11-21T04:19:43.827</Modified>
+      <Modified>2024-11-22T13:21:44.770</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -303,7 +303,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\Desktop\Programs\NursingProblemApplicationALPHA\NursingProblemApplicationALPHA\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\NursingProblemApplicationALPHA.deps.json">
       <PackagePath>NursingProblemApplicationALPHA.deps.json</PackagePath>
-      <Modified>2024-11-20T20:58:37.727</Modified>
+      <Modified>2024-11-22T12:19:21.751</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brend\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.44\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

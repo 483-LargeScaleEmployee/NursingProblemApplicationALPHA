@@ -1,5 +1,6 @@
 ﻿
 using CommunityToolkit.Maui.Storage;
+using Microsoft.Maui.Storage;
 using Microsoft.UI.Xaml;
 using System.Diagnostics;
 using System.Reflection;
@@ -114,9 +115,9 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = this;  //Lets the XAML file access the property
-        Program.ProgramMain();  //Runs through the csv on boot, check if this errors w/o csv
+        CSV_Parser.ParseCSVAsync();  //Runs through the csv on boot, check if this errors w/o csv
 
-        employees = Program.employees;
+        employees = CSV_Parser.employees;
         testbreakpoint++;
 
         //Make a thing that sets a random employee as the current schedule on launch
@@ -207,17 +208,24 @@ public partial class MainPage : ContentPage
 
     private void Random_Employee(object sender, EventArgs e)
     {
-        Random random = new Random();
-        var randomEmployeeKey = employees.Keys.ElementAt(random.Next(employees.Count));
+        try
+        {
+            Random random = new Random();
+            var randomEmployeeKey = employees.Keys.ElementAt(random.Next(employees.Count));
 
-        entry.Text = randomEmployeeKey;
-        OnEntryCompleted(sender, e);
+            entry.Text = randomEmployeeKey;
+            OnEntryCompleted(sender, e);
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
 
 
     private async void ImportFile_Clicked(object sender, EventArgs e) //Button that lets you import files
     {
-
+        Name = "NOW LOADING PLEASE WAIT";   //Tells user the program is loading
         //Prompts User with picking the input folder
         var inputFolder = await FolderPicker.PickAsync(default);
 
@@ -260,10 +268,11 @@ public partial class MainPage : ContentPage
         //add something here that indicates that the program is loading
         //add something that tells the user if the algorithm didn't run for whatever reason
         process.WaitForExit();
+        Name = "FINISHED"; //Tells user that it is finished loading
 
         //runs the output
-        Program.ProgramMain();
-        employees = Program.employees;
+        CSV_Parser.ParseCSVAsync();
+        employees = CSV_Parser.employees;
 
     }
 
