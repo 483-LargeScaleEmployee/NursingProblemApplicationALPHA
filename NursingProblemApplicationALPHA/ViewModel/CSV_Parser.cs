@@ -34,7 +34,7 @@ namespace ViewModel
         public static Dictionary<string, Employee> employees = new Dictionary<string, Employee>();
         public static dynamic departments = DepartmentInitializer.InitializeDepartments();
 
-        public static async Task<IList<Employee>> ParseCSVAsync()
+        public static IList<Employee> ParseCSV()
         {
             //commented out to see if I can just make it public and have no issues at all
             //Dictionary<String, Department> departments = DepartmentInitializer.InitializeDepartments();
@@ -52,7 +52,7 @@ namespace ViewModel
 
                 using (reader)
                 {
-                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture)) 
+                    using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                     {
                         var records = csv.GetRecords<EmployeeCSV>();
 

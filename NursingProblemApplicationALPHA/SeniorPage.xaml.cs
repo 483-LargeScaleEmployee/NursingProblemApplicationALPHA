@@ -95,15 +95,13 @@ public partial class SeniorPage : ContentPage
         pickerFilter1.ItemDisplayBinding = new Binding("Name");
 
 
+
         pickerFilter2.SetBinding(Picker.ItemsSourceProperty, "RoleList");
+       
+        MasterEmployeeList = CSV_Parser.employees.Values.ToList<Employee>();
+        OnPropertyChanged(nameof(MasterEmployeeList));
 
-        Dispatcher.DispatchAsync(async () =>
-        {
-            MasterEmployeeList = await CSV_Parser.ParseCSVAsync();
-            OnPropertyChanged(nameof(MasterEmployeeList));
-
-            EmployeesByRole = MasterEmployeeList;
-        });
+        EmployeesByRole = MasterEmployeeList;
 
         for (int i = 0; i < (NUM_DAYS * NUM_SHIFTS); i++)
         {

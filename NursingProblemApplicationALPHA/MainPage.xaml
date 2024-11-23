@@ -198,6 +198,7 @@
                 </Border>
 
                 <Button
+                    x:Name="buttonRandomEmployee"
                     Text ="Random Employee"
                     BackgroundColor ="LightBlue"
                     BorderWidth ="2"
