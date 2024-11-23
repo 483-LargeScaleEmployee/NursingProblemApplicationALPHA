@@ -27,7 +27,17 @@ namespace ViewModel
         [Index(4)]
         public required string Shifts { get; set; }
     }
-   
+
+    public class DepartmentsCSV
+    {
+
+        [Name("Sprint Day")]
+        public required string Day { get; set; }
+        public required string Shift { get; set; }
+        public required int Nurse { get; set; }
+        public required int Doctor { get; set; }
+        public required int Admin { get; set; }
+    }
 
     public class CSV_Parser
     {

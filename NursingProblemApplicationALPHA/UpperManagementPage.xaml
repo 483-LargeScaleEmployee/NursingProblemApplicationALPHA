@@ -7,13 +7,28 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
-            <HorizontalStackLayout Spacing="5">
-                <Label
-                    Text="Department: "/>
+            <HorizontalStackLayout Spacing="100">
+                <HorizontalStackLayout Spacing="5">
+                    <Label
+                        Text="Department: "/>
 
-                <Label
-                    Text="{Binding departmentName}"/>
-                
+                    <Label
+                        Text="{Binding departmentName}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="50">
+                    <Label
+                            Text="Green = Optimally Staffed"
+                            TextColor="Green"/>
+                    
+                    <Label
+                            Text="Yellow = Over Staffed"
+                            TextColor="#F5BC02" />
+                    
+                    <Label
+                            Text="Red = Under Staffed"
+                            TextColor="Red"/>
+
+                </HorizontalStackLayout>
             </HorizontalStackLayout>
 
             <!--add way to see 2 weeks at once through options menu, horizontal scroll-->
