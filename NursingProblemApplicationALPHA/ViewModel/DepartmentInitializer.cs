@@ -101,31 +101,37 @@ namespace ViewModel
             Colors.PaleVioletRed,
         };
 
-
+        
         //Sets colors for departments
         for (int i = 0; i < departmentNames.Count; i++)
         {
             //departments.Add(departmentName[, new Department(departmentName, randomColor)]);
             departments.Add(departmentNames[i], new Department(departmentNames[i], colors[i]));
 
-            //Sets the OptimalStaffing for each department
-            string inputLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication", "inputLocation.txt");
-            StreamReader reader = new StreamReader(inputLocation);
-            string departmentFolder;
-            using (reader)
-            {
-                string filePath = reader.ReadLine();
-                departmentFolder = Path.Combine(filePath, "departments");   //saves the location of the department folder which has all the department csv's
-            }
+                try
+                {
+                    //Sets the OptimalStaffing for each department
+                    string inputLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication", "inputLocation.txt");
+                    StreamReader reader = new StreamReader(inputLocation);
+                    string departmentFolder;
+                    using (reader)
+                    {
+                        string filePath = reader.ReadLine();
+                        departmentFolder = Path.Combine(filePath, "departments");   //saves the location of the department folder which has all the department csv's
+                    }
 
-            //This runs the code that should parse the correct csv OptimalStaffing            
-            string departmentLocationCSV = departmentNames[i] + ".csv";
-            string csvPath = Path.Combine(departmentFolder, departmentLocationCSV);
-            if (File.Exists(csvPath))
-            {
-                    LoadOptimalStaffing(departments[departmentNames[i]], csvPath);
-            }
+                    //This runs the code that should parse the correct csv OptimalStaffing            
+                    string departmentLocationCSV = departmentNames[i] + ".csv";
+                    string csvPath = Path.Combine(departmentFolder, departmentLocationCSV);
+                    if (File.Exists(csvPath))
+                    {
+                        LoadOptimalStaffing(departments[departmentNames[i]], csvPath);
+                    }
 
+                } catch(Exception ex)
+                {
+
+                }
         }
 
 

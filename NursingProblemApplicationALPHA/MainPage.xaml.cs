@@ -1,13 +1,10 @@
 ﻿
 using CommunityToolkit.Maui.Storage;
 using Microsoft.Maui.Storage;
-using Microsoft.UI.Xaml;
 using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
 using ViewModel;
-using Windows.Gaming.Input.ForceFeedback;
-using Windows.Media.AppBroadcasting;
 
 namespace NursingProblemApplicationALPHA;
 
@@ -115,7 +112,8 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = this;  //Lets the XAML file access the property
-        CSV_Parser.ParseCSVAsync();  //Runs through the csv on boot, check if this errors w/o csv
+
+        CSV_Parser.ParseCSV();  //Runs through the csv on boot, check if this errors w/o csv
 
         employees = CSV_Parser.employees;
         testbreakpoint++;
@@ -166,7 +164,7 @@ public partial class MainPage : ContentPage
             for(int i = 0;i < 42; i++)
             {
                 shiftInfo[i] = "Error";
-                colorInfo[i] = Colors.White;
+                colorInfo[i] = Colors.Gray;
             }
 
             colorInfo = _colorInfo; //needs to be here for color to work
@@ -190,7 +188,7 @@ public partial class MainPage : ContentPage
             if(department == null)
             {
                 shiftInfo[count] = "None";
-                colorInfo[count] = Colors.White;    //resets color if another schedule changed it
+                colorInfo[count] = Colors.Gray;    //resets color if another schedule changed it
             }
             else
             {
@@ -227,11 +225,17 @@ public partial class MainPage : ContentPage
     {
         Name = "NOW LOADING PLEASE WAIT";   //Tells user the program is loading
         //Prompts User with picking the input folder
+        buttonRandomEmployee.IsEnabled = false;
         var inputFolder = await FolderPicker.PickAsync(default);
 
         //Exits if the user does not select an input folder
         if (inputFolder.IsSuccessful == false)
         {
+            if (employees.Count > 0)
+            {
+                buttonRandomEmployee.IsEnabled = true;
+                Name = "Folder Already Selected, Nothing to do.";
+            }
             return;
         }
 
@@ -245,7 +249,7 @@ public partial class MainPage : ContentPage
 
         //Sets the output folder so we always know where it is.
         //Output located @ MyDoccuments/NursingProblemApplication/Output
-        string outputFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication","Output" );
+        string outputFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NursingProblemApplication","Output");
 
         if (!Directory.Exists(outputFolderPath))
         {
@@ -274,9 +278,10 @@ public partial class MainPage : ContentPage
         //add something that tells the user if the algorithm didn't run for whatever reason
         process.WaitForExit();
         Name = "FINISHED"; //Tells user that it is finished loading
+        buttonRandomEmployee.IsEnabled = true;
 
         //runs the output
-        CSV_Parser.ParseCSVAsync();
+        CSV_Parser.ParseCSV();
         employees = CSV_Parser.employees;
 
     }
