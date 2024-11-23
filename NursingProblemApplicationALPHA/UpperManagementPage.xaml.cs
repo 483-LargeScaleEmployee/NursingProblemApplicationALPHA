@@ -1,8 +1,35 @@
+using CommunityToolkit.Maui.Views;
+using ViewModel;
+
 namespace NursingProblemApplicationALPHA;
 
 public partial class UpperManagementPage : ContentPage
 {
-	//Used for grid 1 Visablility
+    //Makes an array that contains shift information (42)
+    private int[] _shiftInfo = new int[42];
+    public int[] shiftInfo
+    {
+        get => _shiftInfo;
+        set
+        {
+            _shiftInfo = value;
+            OnPropertyChanged(nameof(shiftInfo)); // Notify the UI that the property has changed
+        }
+    }
+
+    //Makes an array that contains department color info (42)
+    private Color[] _colorInfo = new Color[42];
+    public Color[] colorInfo
+    {
+        get => _colorInfo;
+        set
+        {
+            _colorInfo = value;
+            OnPropertyChanged(nameof(colorInfo)); // Notify the UI that the property has changed
+        }
+    }
+
+    //Used for grid 1 Visablility
     private bool _gridOneBool = true;
     public bool GridOneBool
     {
@@ -47,15 +74,36 @@ public partial class UpperManagementPage : ContentPage
         {
             _ImageRotation = value;
             OnPropertyChanged(nameof(ImageRotation)); // Notify the UI that the property has changed
+
         }
     }
 
+    //change department in title
+    private string _departmentName = "NONE";
+    public string departmentName
+    {
+        get => _departmentName;
+        set
+        {
+            _departmentName = value;
+            OnPropertyChanged(nameof(departmentName)); // Notify the UI that the property has changed
+        }
+    }
 
-	public UpperManagementPage()
+    //department information is saved into this for easier access
+    public static dynamic departments = DepartmentInitializer.InitializeDepartments();
+    int testbreakpoint;
+
+    public UpperManagementPage()
 	{
 		InitializeComponent();
-		BindingContext = this;  //Lets the XAML file access the property
-	}
+        BindingContext = this;  //Lets the XAML file access the property
+
+        departments = CSV_Parser.departments;  //this works you dont need to recall csvReader
+        testbreakpoint++;
+
+        
+    }
 
     private void NextButton_Clicked(object sender, EventArgs e) //changes which week is in view for 1 week view mode
     {
@@ -83,29 +131,65 @@ public partial class UpperManagementPage : ContentPage
 
 		}
     }
-
-
-    private async void ImportFile_Clicked(object sender, EventArgs e) //Button that lets you import files
+    private async void Change_Department(object sender, EventArgs e)	//Opens departmentPopup
     {
-		var customFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-		{
-			{DevicePlatform.WinUI, new[] {".csv"}} //This should only let you import csv files
-		
-		});
+        try
+        {
+            var result = await this.ShowPopupAsync(new DepartmentPopup());
+            //Should open a popup with department list
 
+            if (result == null)
+            {
+                return;  //prevents crash from not choosing department
+            }
 
+            if (result is string departmentName)
+            {
+                _departmentName = departmentName;
+                OnPropertyChanged(nameof(departmentName));
+            }
 
-		var result = await FilePicker.PickAsync(new PickOptions
-		{
-			PickerTitle = "Import CSV",
-			FileTypes = customFileType
-		});
+            //now make it so it populates shiftinfo with how many people are in the department
+            //then populate shiftcolor for whether its over, under or equal to the required amount
 
-		if (result == null){
-			return;
-		}
+            var schedule = departments[_departmentName].Schedule;
+            var OptimalStaffing = departments[_departmentName].OptimalStaffing;
+            int count = 0;
 
-		var stream = await result.OpenReadAsync();  //I dont know what this line does for sure, I think it reads the file
+            foreach (var item in schedule)
+            {
+                int scheduleBlock = item.Key;
+                var department = item.Value;
+
+                shiftInfo[count] = department.Count;
+
+                var optimalStaff = OptimalStaffing[count];
+
+                //sets color depending on staffAmount
+                if (department.Count < optimalStaff) //not enough scheduled
+                {
+                    colorInfo[count] = Colors.Red;
+                }
+                else if (department.Count > optimalStaff) //too many scheduled
+                {
+                    colorInfo[count] = Colors.Yellow;
+                }
+                else //optimal scheduled
+                {
+                    colorInfo[count] = Colors.Green;
+                }
+
+                count++;
+
+            }
+
+            colorInfo = _colorInfo; //needs to be here for color to work
+            OnPropertyChanged(nameof(shiftInfo));  //updates so that the shifts change
+        }
+        catch (Exception ex)
+        {
+
+        }
 
     }
 

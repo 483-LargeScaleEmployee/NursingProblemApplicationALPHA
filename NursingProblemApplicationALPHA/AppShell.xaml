@@ -20,8 +20,9 @@
 
         <ShellContent
             Title="Senior"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:SeniorPage}"
+            Route="SeniorPage" />
+
 
     </TabBar>
 </Shell>

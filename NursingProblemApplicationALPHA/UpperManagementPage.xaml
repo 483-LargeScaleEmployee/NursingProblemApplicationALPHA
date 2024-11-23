@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NursingProblemApplicationALPHA.UpperManagementPage"
              Title="UpperManagementPage">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="20">
-            <Label
-                Text="Department: VARIABLE"/>
+            <HorizontalStackLayout Spacing="100">
+                <HorizontalStackLayout Spacing="5">
+                    <Label
+                        Text="Department: "/>
+
+                    <Label
+                        Text="{Binding departmentName}"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="50">
+                    <Label
+                            Text="Green = Optimally Staffed"
+                            TextColor="Green"/>
+                    
+                    <Label
+                            Text="Yellow = Over Staffed"
+                            TextColor="#F5BC02" />
+                    
+                    <Label
+                            Text="Red = Under Staffed"
+                            TextColor="Red"/>
+
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
 
             <!--add way to see 2 weeks at once through options menu, horizontal scroll-->
             <!--Horizontal Layout (Time Labels, Absolute layout, Next Arrow)-->
@@ -63,28 +85,27 @@
                         <!--This Formatting is Temporay, But it makes all the buttons & makes them white to use the grid bg as a border-->
                         <!--Eventually Replace the Button text with data from shifts and button color with shift color-->
                         <!--I think for button text to be readable we should pick shift colors that work well with black-->
-                        <Button Text="Row 1 Column 1" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 2" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 3" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 4" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 5" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 6" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 7" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 1" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 2" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 3" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 4" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 5" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 6" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 7" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 1" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 2" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 3" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 4" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 5" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 6" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 7" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-
+                        <Button Text="{Binding shiftInfo[0]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="{Binding colorInfo[0]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[1]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="{Binding colorInfo[1]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[2]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="{Binding colorInfo[2]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[3]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="{Binding colorInfo[3]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[4]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="{Binding colorInfo[4]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[5]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="{Binding colorInfo[5]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[6]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="{Binding colorInfo[6]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[7]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="{Binding colorInfo[7]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[8]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="{Binding colorInfo[8]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[9]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="{Binding colorInfo[9]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[10]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="{Binding colorInfo[10]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[11]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="{Binding colorInfo[11]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[12]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="{Binding colorInfo[12]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[13]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="{Binding colorInfo[13]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[14]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="{Binding colorInfo[14]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[15]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="{Binding colorInfo[15]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[16]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="{Binding colorInfo[16]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[17]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="{Binding colorInfo[17]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[18]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="{Binding colorInfo[18]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[19]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="{Binding colorInfo[19]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[20]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="{Binding colorInfo[20]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
                     </Grid>
 
                     <!--Creates Week 2 Grid View-->
@@ -116,27 +137,27 @@
                         <Button Text="Sunday" LineBreakMode="WordWrap" HeightRequest="30" WidthRequest="120" CornerRadius="20" Grid.Row ="0" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>                        
 
                         <!--Schedule Buttons-->
-                        <Button Text="Row 1 Column 8" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 9" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 10" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 11" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 12" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 13" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 1 Column 14" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 8" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 9" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 10" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 11" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 12" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 13" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 2 Column 14" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 8" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 9" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 10" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 11" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 12" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 13" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
-                        <Button Text="Row 3 Column 14" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="3"/>
+                        <Button Text="{Binding shiftInfo[21]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="0" BackgroundColor="{Binding colorInfo[21]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[22]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="0" BackgroundColor="{Binding colorInfo[22]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[23]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="0" BackgroundColor="{Binding colorInfo[23]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[24]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="1" BackgroundColor="{Binding colorInfo[24]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[25]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="1" BackgroundColor="{Binding colorInfo[25]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[26]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="1" BackgroundColor="{Binding colorInfo[26]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[27]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="2" BackgroundColor="{Binding colorInfo[27]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[28]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="2" BackgroundColor="{Binding colorInfo[28]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[29]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="2" BackgroundColor="{Binding colorInfo[29]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[30]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="3" BackgroundColor="{Binding colorInfo[30]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[31]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="3" BackgroundColor="{Binding colorInfo[31]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[32]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="3" BackgroundColor="{Binding colorInfo[32]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[33]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="4" BackgroundColor="{Binding colorInfo[33]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[34]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="4" BackgroundColor="{Binding colorInfo[34]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[35]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="4" BackgroundColor="{Binding colorInfo[35]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[36]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="5" BackgroundColor="{Binding colorInfo[36]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[37]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="5" BackgroundColor="{Binding colorInfo[37]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[38]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="5" BackgroundColor="{Binding colorInfo[38]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[39]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="1" Grid.Column ="6" BackgroundColor="{Binding colorInfo[39]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[40]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="2" Grid.Column ="6" BackgroundColor="{Binding colorInfo[40]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
+                        <Button Text="{Binding shiftInfo[41]}" LineBreakMode="WordWrap" HeightRequest="120" WidthRequest="120" CornerRadius="0" Grid.Row ="3" Grid.Column ="6" BackgroundColor="{Binding colorInfo[41]}" TextColor="Black" BorderColor="Black" BorderWidth="3" FontSize="70"/>
 
                     </Grid>
 
@@ -164,13 +185,14 @@
                     />
 
                 <Button
-                    Text ="Import File"
-                    BackgroundColor ="Green"
+                    Text ="Change Department"
+                    BackgroundColor ="LightCoral"
                     BorderWidth ="2"
                     BorderColor ="Black"
                     TextColor ="Black"
-                    Clicked="ImportFile_Clicked"
+                    Clicked="Change_Department"
                     ToolTipProperties.Text="Clickable"/>
+
 
             </HorizontalStackLayout> 
         </VerticalStackLayout>
