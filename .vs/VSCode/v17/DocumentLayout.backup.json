@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Eric\\source\\repos\\483-LargeScaleEmployee\\NursingProblemApplicationALPHA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|c:\\users\\eric\\source\\repos\\483-largescaleemployee\\nursingproblemapplicationalpha\\nursingproblemapplicationalpha\\seniorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|solutionrelative:nursingproblemapplicationalpha\\seniorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|c:\\users\\eric\\source\\repos\\483-largescaleemployee\\nursingproblemapplicationalpha\\nursingproblemapplicationalpha\\seniorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|solutionrelative:nursingproblemapplicationalpha\\seniorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|c:\\users\\eric\\source\\repos\\483-largescaleemployee\\nursingproblemapplicationalpha\\nursingproblemapplicationalpha\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|solutionrelative:nursingproblemapplicationalpha\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|c:\\users\\eric\\source\\repos\\483-largescaleemployee\\nursingproblemapplicationalpha\\nursingproblemapplicationalpha\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|solutionrelative:nursingproblemapplicationalpha\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|c:\\users\\eric\\source\\repos\\483-largescaleemployee\\nursingproblemapplicationalpha\\nursingproblemapplicationalpha\\seniorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|solutionrelative:nursingproblemapplicationalpha\\seniorpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|c:\\users\\eric\\source\\repos\\483-largescaleemployee\\nursingproblemapplicationalpha\\nursingproblemapplicationalpha\\seniorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|solutionrelative:nursingproblemapplicationalpha\\seniorpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9ACDC403-0213-4A77-A1FD-E8FBCB7F5482}|NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA.csproj|c:\\users\\eric\\source\\repos\\483-largescaleemployee\\nursingproblemapplicationalpha\\nursingproblemapplicationalpha\\viewmodel\\csv_parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "SeniorPage.xaml",
               "DocumentMoniker": "C:\\Users\\Eric\\source\\repos\\483-LargeScaleEmployee\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\SeniorPage.xaml",
               "RelativeDocumentMoniker": "NursingProblemApplicationALPHA\\SeniorPage.xaml",
@@ -60,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SeniorPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Eric\\source\\repos\\483-LargeScaleEmployee\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\SeniorPage.xaml.cs",
               "RelativeDocumentMoniker": "NursingProblemApplicationALPHA\\SeniorPage.xaml.cs",
@@ -78,26 +78,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Eric\\source\\repos\\483-LargeScaleEmployee\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "NursingProblemApplicationALPHA\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\Eric\\source\\repos\\483-LargeScaleEmployee\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\MainPage.xaml.cs",
               "RelativeToolTip": "NursingProblemApplicationALPHA\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAOwAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAKsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T21:27:42.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Eric\\source\\repos\\483-LargeScaleEmployee\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\MainPage.xaml",
               "RelativeDocumentMoniker": "NursingProblemApplicationALPHA\\MainPage.xaml",
               "ToolTip": "C:\\Users\\Eric\\source\\repos\\483-LargeScaleEmployee\\NursingProblemApplicationALPHA\\NursingProblemApplicationALPHA\\MainPage.xaml",
               "RelativeToolTip": "NursingProblemApplicationALPHA\\MainPage.xaml",
-              "ViewState": "AgIAAL4AAAAAAAAAAADwv8gAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAADwv8gAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-11-22T21:27:37.494Z",
               "EditorCaption": ""
